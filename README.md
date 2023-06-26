@@ -16,17 +16,21 @@ Vous avez obtenu le marché suite à la réponse à l’appel d’offre et devez
 solution MVP dans les plus brefs délais.
 Cette solution devra permettre à minima de :
 Utilisateur standard :
-• S’inscrire/se connecter
-• Voir les produits en vente et rechercher des produits par leur nom
-• Voir le détail d’un produit (nom, description, prix, vendeur, note moyenne du produit, note
+- S’inscrire/Se connecter
+- Voir les produits en vente et rechercher des produits par leur nom
+- Voir le détail d’un produit (nom, description, prix, vendeur, note moyenne du produit, note
 moyenne du vendeur)
-• Ajouter un ou plusieurs produits au panier
-• Valider une commande (sans module de paiement pour le moment)
-• Voir le récapitulatif des commandes
-• Ajouter une note à un produit commandé (entre 1 et 5 étoiles)
+- Ajouter un ou plusieurs produits au panier
+- Valider une commande (sans module de paiement pour le moment)
+- Voir le récapitulatif des commandes
+- Ajouter une note à un produit commandé (entre 1 et 5 étoiles)
 Vendeur :
-• S’inscrire/se connecter
-• Gérer ses propres produits (ajouter, supprimer => attention un produit supprimé ne doit plus
+- S’inscrire/se connecter
+- Gérer ses propres produits (ajouter, supprimer => attention un produit supprimé ne doit plus
 être en vente, mais doit être conservé pour l’historique des commandes et notes d’un
 vendeur)
-• Accéder aux commandes qui lui sont passés
+- Accéder aux commandes qui lui sont passés
+
+## Réutilisation du projet
+Le code est librement modifiable sans restriction ni contrainte technique particulière.
+
