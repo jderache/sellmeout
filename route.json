@@ -1,44 +1,44 @@
 [
   {
-    "path": "/User",
+    "path": "/user",
     "controller": "User",
     "action": "ShowUserList",
     "method": "GET",
     "manager": ["User"]
   },
   {
-    "path": "/User/([0-9]*)",
+    "path": "/user/([0-9]*)",
     "controller": "User",
     "action": "ShowUser",
     "method": "GET"
   },
   {
-    "path": "/User",
+    "path": "/user",
     "controller": "User",
     "action": "CreateUser",
     "method": "POST"
   },
   {
-    "path": "/User/update",
+    "path": "/user/update",
     "controller": "User",
     "action": "UpdateUser",
     "method": "POST"
   },
   {
-    "path": "/User/delete",
+    "path": "/user/delete",
     "controller": "User",
     "action": "DeleteUser",
     "method": "GET"
   },
 
   {
-    "path": "/SignIn",
+    "path": "/signin",
     "controller": "User",
     "action": "SignInForm",
     "method": "GET"
   },
   {
-    "path": "/SignIn",
+    "path": "/signin",
     "controller": "User",
     "action": "SignIn",
     "method": "POST",
@@ -58,7 +58,7 @@
     "manager": ["User"]
   },
   {
-    "path": "/Product",
+    "path": "/product",
     "controller": "Product",
     "action": "ShowProductList",
     "method": "GET",
@@ -66,14 +66,14 @@
   },
 
   {
-    "path": "/Product/New",
+    "path": "/product/new",
     "controller": "Product",
     "action": "ProductForm",
     "method": "GET",
     "auth": ["admin"]
   },
   {
-    "path": "/Product/New",
+    "path": "/product/new",
     "controller": "Product",
     "action": "CreateProduct",
     "method": "POST",
