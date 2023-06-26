@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <?= (!empty($header))?$header:""; ?>
 </head>
+
+<?php 
+    $directoryURI = $_SERVER['REQUEST_URI'];
+    $path = parse_url($directoryURI, PHP_URL_PATH);
+    $components = explode('/', $path);
+    $first_part = $components[1];
+?>
+
 <body>
     <header>
         <div class="containerMenu">
@@ -15,14 +23,13 @@
                 <img alt="SellMeOut" src="./Images/logo.png" class="logo">
             </a>
                 <div class="navigation">
-                    <a href="">Nos produits</a>
-                    <a href="">Login</a>
-                    <a href="">Basket</a>
+                    <a class="<?php if ($first_part=="product") {echo "active"; } else  {echo "noactive";}?>" href="">Nos produits</a>
+                    <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="">Login</a>
+                    <a class="<?php if ($first_part=="basket") {echo "active"; } else  {echo "noactive";}?>" href="">Basket</a>
                 </div>
         </div>
     </header>
     <div class="content">
         <?= $content; ?>
     </div>
-</body>
-</html>
+

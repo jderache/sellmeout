@@ -66,6 +66,9 @@ header > div {
 .containerMenu .navigation a:hover {
   background-size: 100% 100%;
 }
+.containerMenu .navigation a.active {
+  background-size: 100% 100%;
+}
 img.logo {
   width: 55px;
   padding: 10px;
