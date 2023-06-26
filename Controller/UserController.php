@@ -90,4 +90,11 @@ class UserController extends BaseController{
         }
 
     }
+
+    function Logout()
+    {
+        session_unset();
+        session_destroy();
+        header("Location: /User/login");
+    }
 }
