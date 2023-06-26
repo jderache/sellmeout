@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  font-family: "Lato", sans-serif;
+}
+
+header {
+  align-content: center;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 64px;
+  box-shadow: 20px 40px 30px rgba(39, 35, 67, 0.02);
+  flex: none;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 85px;
+  justify-content: space-between;
+  left: 15px;
+  margin: 0 0 0 0;
+  padding: 0px 20px 0px;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  width: auto;
+  z-index: 5;
+  max-width: 100%;
+}
+
+div.containerMenu {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+.containerMenu a {
+  color: #272343;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 35px;
+}
+
+header > div {
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 0px;
+}
+
+img.logo {
+  width: 55px;
+  padding: 10px;
+}
+a.logoLink {
+  align-content: flex-start;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 0px solid #f7f8fa;
+  border-left: 0px solid #f7f8fa;
+  border-right: 1px solid #f7f8fa;
+  border-top: 0px solid #f7f8fa;
+  flex: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 50px;
+  justify-content: center;
+  padding: 0px 40px 0px 0px;
+  width: auto;
+  max-width: calc(100% - 40px);
+  height: 100%;
+}
+body {
+  padding-top: 130px;
+  background-color: #f9fafc;
+}

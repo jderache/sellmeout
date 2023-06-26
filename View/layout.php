@@ -5,17 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
     <?= (!empty($header))?$header:""; ?>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Liste des utlisateurs</a></li>
-                <li><a href="#">Ajouter un utilisateur</a></li>
-            </ul>
-        </nav>
+        <div class="containerMenu">
+            <a aria-label="HomePage" href="/" title="SellMeOut" class="logoLink">
+                <img alt="SellMeOut" src="./Images/logo.png" class="logo">
+            </a>
+                <div>
+                    <a href="">Nos produits</a>
+                    <a href="">Login</a>
+                    <a href="">Basket</a>
+                </div>
+        </div>
     </header>
     <div class="content">
         <?= $content; ?>

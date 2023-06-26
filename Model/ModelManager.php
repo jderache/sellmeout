@@ -57,7 +57,7 @@ class ModelManager
     public function update($obj)
     {
         //"UPDATE table SET property=value,property2=value2 WHERE id=id"
-
+        
         $sql = "UPDATE " . $this->table . " SET ";
         $propertiesList = get_object_vars($obj);
         $properties = array();

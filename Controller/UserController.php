@@ -58,11 +58,12 @@ class UserController extends BaseController{
         $this->View("signin");
     }
 
-    function SignIn($mail, $password) {
+    function SignIn($mail, $password, $role) {
         $user = new \stdClass();
         $user->mail = $mail;
         $user->password = password_hash($password,PASSWORD_DEFAULT);
-        $user->pseudo = "test";
+        $user->pseudo = $mail;
+        $user->role = $role;
         if ($this->userManager->create($user)) {
             echo "Utilisateur créé !";
         }
@@ -95,6 +96,6 @@ class UserController extends BaseController{
     {
         session_unset();
         session_destroy();
-        header("Location: /User/login");
+        header("Location: /user/login");
     }
 }
