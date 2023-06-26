@@ -1,17 +1,37 @@
-<?php
+<?php 
 namespace Controller;
 
-class ProductController extends BaseController{
+class ProductController extends BaseController {
+    protected $productManager;
 
-    public function ShowProductList()
-    {
-        $productList = $this->productManager->getAll();
-        $this->addParam('products', $productList);
-        $this->View('productList');
+    function ShowProducts(){
+        $products = $this->productManager->getAll();
+        $this->compact(["products" => $products]);
+        $this->view("products");
     }
 
-    public function ProductForm()
-    {
-        $this->View("productForm");
+    function showProduct($id) {
+        $product = $this->productManager->getById($id);
+        $this->compact(["product" => $product]);
+        $this->view("product");
+    }
+
+    function addProduct($nom, $description, $price, $statut) {
+        $product = new \stdClass();
+        $product->nom = $nom;
+        $product->description = $description;
+        $product->price = $price;
+        $product->statut = $statut;
+        if ($this->productManager->create($product)) {
+            $this->compact([
+                "success" => "Produit ajouté !"
+            ]);
+
+            $this->addProductView();
+        }
+    }
+
+    function addProductView() {
+        $this->view("addProduct");
     }
 }

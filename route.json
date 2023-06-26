@@ -58,9 +58,9 @@
     "manager": ["User"]
   },
   {
-    "path": "/product",
+    "path": "/products",
     "controller": "Product",
-    "action": "ShowProductList",
+    "action": "ShowProducts",
     "method": "GET",
     "manager": ["Product"]
   },
@@ -68,15 +68,19 @@
   {
     "path": "/product/new",
     "controller": "Product",
-    "action": "ProductForm",
-    "method": "GET",
-    "auth": ["admin"]
+    "action": "addProduct",
+    "method": "POST",
+        "manager": [
+            "product"
+        ]
   },
   {
     "path": "/product/new",
     "controller": "Product",
-    "action": "CreateProduct",
-    "method": "POST",
-    "manager": ["Product"]
+    "action": "addProductView",
+    "method": "GET",
+    "manager": [
+        "product"
+    ]
   }
 ]
