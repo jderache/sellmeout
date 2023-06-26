@@ -2,6 +2,7 @@
 
 * {
   font-family: "Lato", sans-serif;
+  font-size: 16px;
 }
 
 header {
@@ -51,6 +52,20 @@ header > div {
   padding: 0px;
 }
 
+.containerMenu .navigation a {
+  background: linear-gradient(
+      to top,
+      rgba(248, 22, 73, 0.4) 0%,
+      rgba(248, 22, 73, 0.4) 6px,
+      transparent 10px
+    )
+    no-repeat;
+  background-size: 0 100%;
+  transition: background-size 0.3s;
+}
+.containerMenu .navigation a:hover {
+  background-size: 100% 100%;
+}
 img.logo {
   width: 55px;
   padding: 10px;
@@ -76,4 +91,44 @@ a.logoLink {
 body {
   padding-top: 130px;
   background-color: #f9fafc;
+}
+
+.my-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+  width: calc(100% - 21px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #f81649;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #f81649;
 }

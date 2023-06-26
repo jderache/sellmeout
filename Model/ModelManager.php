@@ -31,11 +31,6 @@ class ModelManager
         $sql = "INSERT INTO " . $this->table;
         $properties = array_keys(get_object_vars($obj));
     
-        // Vérifiez si le champ 'role' est spécifié
-        if (!in_array('role', $properties)) {
-            $properties[] = 'role';
-        }
-    
         $sql .= "(" . implode(", ", $properties) . ")";
         foreach ($properties as &$property) {
             $property = ":" . $property;
@@ -43,11 +38,6 @@ class ModelManager
         $sql .= " VALUE(" . implode(", ", $properties) . ")";
     
         $req = $this->bdd->prepare($sql);
-    
-        // Vérifiez si le champ 'role' est spécifié, sinon utilisez une valeur par défaut
-        if (!property_exists($obj, 'role')) {
-            $obj->role = 'buyer';
-        }
     
         $req->execute(get_object_vars($obj));
     
@@ -57,7 +47,7 @@ class ModelManager
     public function update($obj)
     {
         //"UPDATE table SET property=value,property2=value2 WHERE id=id"
-        
+
         $sql = "UPDATE " . $this->table . " SET ";
         $propertiesList = get_object_vars($obj);
         $properties = array();

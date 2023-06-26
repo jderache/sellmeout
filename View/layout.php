@@ -14,7 +14,7 @@
             <a aria-label="HomePage" href="/" title="SellMeOut" class="logoLink">
                 <img alt="SellMeOut" src="./Images/logo.png" class="logo">
             </a>
-                <div>
+                <div class="navigation">
                     <a href="">Nos produits</a>
                     <a href="">Login</a>
                     <a href="">Basket</a>
