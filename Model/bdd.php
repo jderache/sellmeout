@@ -1,5 +1,7 @@
 <?php
+
 namespace Model;
+
 
 class Bdd {
     public $connect;
@@ -7,7 +9,7 @@ class Bdd {
 
     private function __construct()
     {
-        $this->connect = new \PDO("mysql:dbname=" . $_ENV["DB_DATABASE"] . ";host=" . $_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"]);
+        $this->connect = new \PDO("mysql:dbname=php-mvc;host=localhost","root","root");
     }
 
     public static function getInstance()
