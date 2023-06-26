@@ -41,8 +41,10 @@ class BaseController
         include "View/layout.php";
     }
 
-    public function addParam($key, $value)
+    public function compact($array) 
     {
-        $this->params[$key] = $value;
+        foreach($array as $key => $value) {
+            $this->params[$key] = $value;
+        }
     }
 }

@@ -6,7 +6,7 @@ class UserController extends BaseController{
 
     function ShowUserList(){
         $userList = $this->userManager->getAll();
-        $this->addParam('users', $userList);
+        $this->compact(['users' => $userList]);
         $this->View('userList');
     }
 
