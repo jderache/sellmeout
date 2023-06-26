@@ -1,9 +1,28 @@
 <?php 
 namespace Controller;
 
+
 class UserController extends BaseController{
 
-    // Fonction pour créer un utilisateur
+    function ShowUserList(){
+        $userList = $this->userManager->getAll();
+        $this->addParam('users', $userList);
+        $this->View('userList');
+    }
+
+    function ShowUser($id)
+    {
+        $user = $this->userManager->getById($id);
+        if ($user) 
+        {
+            var_dump($user);
+        }
+        else
+        {
+            echo 'Utilisateur non trouvé';
+        }
+    }
+
     function CreateUser()
     {
         $user = new \stdClass();
@@ -15,27 +34,6 @@ class UserController extends BaseController{
         }
     }
 
-    // Fonction pour update un utilisateur
-    function CreateUser()
-    {
-        $user = new \stdClass();
-        $user->mail = "test@test.fr";
-        $user->password = password_hash("imverysecure",PASSWORD_DEFAULT);
-        $user->pseudo = "test";
-        if ($this->userManager->create($user)) {
-            echo "Utilisateur créé !";
-        }
-    }
-
-    // Fonction pour supprimer un utilisateur
-    function DeleteUser()
-    {
-        if ($this->userManager->delete("3")) {
-            echo "Utilisateur supprimé !";
-        }
-    }
-
-    // Fonction pour update un utilisateur
     function UpdateUser()
     {
         $user = new \stdClass();
@@ -47,24 +45,34 @@ class UserController extends BaseController{
             echo "Utilisateur modifié !";
         }
     }
-    // Fonction pour avoir le formulaire d'inscription
-    function SigninForm(){
+
+    function DeleteUser()
+    {
+        if ($this->userManager->delete("3")) {
+            echo "Utilisateur supprimé !";
+        }
+    }
+
+    function SignInForm()
+    {
         $this->View("signin");
     }
 
-    // Fonction pour connecter un utilisateur
-    function SignIn($email, $password)
-    {
-        var_dump($email, $password);
+    function SignIn($mail, $password) {
+        $user = new \stdClass();
+        $user->mail = $mail;
+        $user->password = password_hash($password,PASSWORD_DEFAULT);
+        $user->pseudo = "test";
+        if ($this->userManager->create($user)) {
+            echo "Utilisateur créé !";
+        }
     }
 
-    // Fonction pour afficher le formulaire de login
     function LoginForm()
     {
         $this->View("login");
     }
 
-    // Fonction pour connecter un utilisateur
     function Login($mail, $password)
     {
         $user = $this->userManager->getByEmail($mail);

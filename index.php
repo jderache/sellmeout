@@ -1,7 +1,9 @@
 <?php
 spl_autoload_register(function($class){
+    $class = str_replace('\\', '/', $class);
     include_once($class . ".php");
 });
+
 
 session_start();
 
@@ -29,8 +31,11 @@ if (count($result) == 1) {
     $params = array_merge($match, $_POST);
     $controllerName = "\\Controller\\" .$result[0]->controller."Controller";
     $controller = new $controllerName($result[0]);
-
+    
     $controller->{$result[0]->action}(...$params);
 } else {
     echo 'pas de route :(';
 }
+// var_dump($routes);
+
+// echo $_SERVER["REQUEST_URI"];

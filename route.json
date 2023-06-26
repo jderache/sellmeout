@@ -1,77 +1,82 @@
 [
-    {
-        "path":"/User",
-        "controller":"User",
-        "action":"CreateUser",
-        "method": "POST"
-    },
-    {
-        "path":"/User/update",
-        "controller":"User",
-        "action":"UpdateUser",
-        "method": "POST"
-    },
-    {
-        "path":"/User/delete",
-        "controller":"User",
-        "action":"DeleteUser",
-        "method": "GET"
-    },
+  {
+    "path": "/User",
+    "controller": "User",
+    "action": "ShowUserList",
+    "method": "GET",
+    "manager": ["User"]
+  },
+  {
+    "path": "/User/([0-9]*)",
+    "controller": "User",
+    "action": "ShowUser",
+    "method": "GET"
+  },
+  {
+    "path": "/User",
+    "controller": "User",
+    "action": "CreateUser",
+    "method": "POST"
+  },
+  {
+    "path": "/User/update",
+    "controller": "User",
+    "action": "UpdateUser",
+    "method": "POST"
+  },
+  {
+    "path": "/User/delete",
+    "controller": "User",
+    "action": "DeleteUser",
+    "method": "GET"
+  },
 
-    {
-        "path":"/SignIn",
-        "controller":"User",
-        "action":"SignInForm",
-        "method": "GET"
-    },
-    {
-        "path":"/SignIn",
-        "controller":"User",
-        "action":"SignIn",
-        "method": "POST",
-        "manager": [
-            "User"
-        ]
-    },
-    {
-        "path":"/Login",
-        "controller":"User",
-        "action":"LoginForm",
-        "method": "GET"
-    },
-    {
-        "path":"/Login",
-        "controller":"User",
-        "action":"Login",
-        "method": "POST",
-        "manager": [
-            "User"
-        ]
-    },
-    {
-        "path":"/Product",
-        "controller":"Product",
-        "action":"ShowProductList",
-        "method": "GET",
-        "manager": [
-            "Product"
-        ]
-    },
-    
-    {
-        "path":"/Product/New",
-        "controller":"Product",
-        "action":"ProductForm",
-        "method": "GET",
-        "auth": ["admin"]
-    },
-    {
-        "path":"/Product/New",
-        "controller":"Product",
-        "action":"CreateProduct",
-        "method": "POST",
-        "manager": [
-            "Product"
-        ]
-    }
+  {
+    "path": "/SignIn",
+    "controller": "User",
+    "action": "SignInForm",
+    "method": "GET"
+  },
+  {
+    "path": "/SignIn",
+    "controller": "User",
+    "action": "SignIn",
+    "method": "POST",
+    "manager": ["User"]
+  },
+  {
+    "path": "/login",
+    "controller": "User",
+    "action": "LoginForm",
+    "method": "GET"
+  },
+  {
+    "path": "/login",
+    "controller": "User",
+    "action": "Login",
+    "method": "POST",
+    "manager": ["User"]
+  },
+  {
+    "path": "/Product",
+    "controller": "Product",
+    "action": "ShowProductList",
+    "method": "GET",
+    "manager": ["Product"]
+  },
+
+  {
+    "path": "/Product/New",
+    "controller": "Product",
+    "action": "ProductForm",
+    "method": "GET",
+    "auth": ["admin"]
+  },
+  {
+    "path": "/Product/New",
+    "controller": "Product",
+    "action": "CreateProduct",
+    "method": "POST",
+    "manager": ["Product"]
+  }
 ]
