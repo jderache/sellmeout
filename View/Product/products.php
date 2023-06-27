@@ -3,10 +3,10 @@
     <div class="products-list">
         <?php foreach($products as $product): ?>
             <div class="product-card" data-href="/Product/<?= $product->id ?>">
-                <!-- <img src="<?= $product->images ?>" alt=""> -->
-                <h3><?= $product->name ?></h3>
+                <img src="<?= $product->image ?>" alt="">
+                <h3><?= $product->nom ?></h3>
                 <p><?= $product->description ?></p>
-                <p><?= $product->price ?></p>
+                <p><?= $product->price ?> €</p>
             </div>
         <?php endforeach; ?>
     </div>
