@@ -94,5 +94,17 @@
     "method": "GET",
     "manager": ["product"],
     "auth": ["admin", "seller"]
+  },
+  {
+      "path":"/basket",
+      "controller":"Basket",
+      "action":"ShowCart",
+      "method": "POST"
+  },
+  {
+      "path":"/basket",
+      "controller":"Basket",
+      "action":"ShowCart",
+      "method": "GET"
   }
 ]
