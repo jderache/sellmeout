@@ -1,3 +1,5 @@
 <div class="profile">
-<p>TEST</p>
+    <div class="container">
+        <p>Vous êtes connectés en tant que <?= $user->pseudo; ?></p>
+    </div>
 </div>
