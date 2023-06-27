@@ -74,5 +74,21 @@
     "controller": "Basket",
     "action": "ShowCart",
     "method": "GET"
+  },
+  {
+    "path": "/user",
+    "controller": "User",
+    "action": "Profile",
+    "method": "GET",
+    "auth": ["admin", "seller","buyer"],
+    "manager": ["Product"]
+  },
+  {
+    "path": "/Product/Status/([0-9]*)",
+    "controller": "Product",
+    "action": "Status",
+    "method": "POST",
+    "auth": ["seller"],
+    "manager": ["Product"]
   }
 ]
