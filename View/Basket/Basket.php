@@ -34,7 +34,7 @@
         </form>
     <?php } else{ ?>
         <div class="EmptyCart">
-            <span>Aucun artice dans votre panier.</span>
+            <span>Aucun article dans votre panier.</span>
         </div>
 <?php
     }

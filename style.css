@@ -205,3 +205,16 @@ body {
 .icon {
   position: relative;
 }
+
+@media screen and (max-width: 800px) {
+  div.navigation {
+    display: none;
+  }
+  div.containerMenu {
+    justify-content: center;
+  }
+  a.logoLink {
+    padding: 0;
+    border: none;
+  }
+}
