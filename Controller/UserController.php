@@ -159,7 +159,7 @@ class UserController extends BaseController
         header("Location: /login");
     }
 
-    function Profile()
+    function MyProducts()
     {
         $this->compact(["user"=> $_SESSION['user']]);
 
@@ -171,6 +171,26 @@ class UserController extends BaseController
                 $listSellerProduct = $this->productManager->getAllSeller($_SESSION['user']->id);
                 $this->compact(["listSellerProduct"=> $listSellerProduct]);
                 break;
+            case "admin":
+
+
+                break;
+        }
+
+        $this->View("myProducts");
+    }
+    function Profile()
+    {
+        $this->compact(["user"=> $_SESSION['user']]);
+
+        switch ($_SESSION['user']->role) {
+            case "buyer":
+
+                break;
+            case "seller":
+                // $listSellerProduct = $this->productManager->getAllSeller($_SESSION['user']->id);
+                // $this->compact(["listSellerProduct"=> $listSellerProduct]);
+                // break;
             case "admin":
 
 

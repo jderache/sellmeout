@@ -78,9 +78,17 @@
   {
     "path": "/my-products",
     "controller": "User",
-    "action": "Profile",
+    "action": "MyProducts",
     "method": "GET",
     "auth": ["admin", "seller"],
+    "manager": ["Product"]
+  },
+  {
+    "path": "/user",
+    "controller": "User",
+    "action": "Profile",
+    "method": "GET",
+    "auth": ["admin", "seller", "buyer"],
     "manager": ["Product"]
   },
   {
