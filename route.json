@@ -89,7 +89,7 @@
     "action": "Profile",
     "method": "GET",
     "auth": ["admin", "seller", "buyer"],
-    "manager": ["Product"]
+    "manager": ["Product", "Order"]
   },
   {
     "path": "/product/status/([0-9]*)",
@@ -105,16 +105,31 @@
     "action": "Search",
     "method": "GET",
     "manager": ["Product"]
-  },{
+  },
+  {
     "path": "/basket/update",
     "controller": "Basket",
     "action": "UpdateQuantity",
     "method": "POST"
   },
   {
+    "path": "/basket/add",
+    "controller": "Basket",
+    "action": "AddToCart",
+    "method": "POST",
+    "manager": ["Product"]
+  },
+  {
     "path": "/basket/delete",
     "controller": "Basket",
     "action": "DeleteFromCart",
     "method": "POST"
+  },
+  {
+    "path": "/basket/confirm",
+    "controller": "Order",
+    "action": "addOrder",
+    "method": "POST",
+    "manager": ["Order"]
   }
 ]

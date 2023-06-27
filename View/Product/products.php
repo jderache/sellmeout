@@ -9,6 +9,10 @@
                     <p><?= $product->description ?></p>
                     <p><?= $product->price ?> €</p>
                     <p><?= $product->pseudo ?></p>
+                    <form method="post" action="/basket/add">
+                        <input type="hidden" name="id" value="<?= $product->id ?>">
+                        <input type="submit" value="Ajouter au panier">
+                    </form>
                 </div>
             <?php endforeach; ?>
         </div>

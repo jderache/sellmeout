@@ -9,7 +9,10 @@
   width: 100%;
   justify-content: center;
 }
-
+.product-card img {
+  max-width: 220px;
+  width: 100%;
+}
 .product-card {
   display: flex;
   flex-direction: column;
@@ -19,7 +22,12 @@
   border-radius: 5px;
   transition: 200ms ease-in-out;
   cursor: pointer;
-  width: 20%;
+  width: auto;
+}
+
+.product-card p,
+.product-card h3 {
+  margin: 0;
 }
 
 .product-card:hover {

@@ -2,7 +2,7 @@
   <div class="container">
           <h1>Mes produits</h1>
           <p style="text-align: center;">Mon mail vendeur: <?= $user->mail; ?></p>
-      </div>
+
 
       <?php if ($user->role === "seller") { ?>
           <div class="product">
@@ -25,4 +25,5 @@
               </div>
           </div>
       <?php } ?>
+</div>
 </div>

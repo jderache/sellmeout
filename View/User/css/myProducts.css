@@ -1,50 +1,61 @@
+.products {
+  width: 100%;
+}
+
 .products-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    transition: 200ms ease-in-out;
-    width: 20%;
-  }
-  
-  
-  .product-card p {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
 
-  .status{
-    display: flex;
-    gap: 10px;
-    background-color: transparent;
-    border:none;
-    cursor: pointer;
-  }
+.products-list img {
+  max-width: 220px;
+  width: 100%;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+  width: auto;
+}
 
-  .status .status-marker{
-    width:20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    
-  }
-  
-  .status.on .status-marker{
-    background-color: rgb(53, 189, 53);
-  }
+.product-card p,
+.product-card h3 {
+  margin: 0;
+}
 
-  .status.off .status-marker{
-    background-color: rgb(255, 43, 43);
-  }
+.product-card p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.status {
+  display: flex;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.status .status-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+}
+
+.status.on .status-marker {
+  background-color: rgb(53, 189, 53);
+}
+
+.status.off .status-marker {
+  background-color: rgb(255, 43, 43);
+}

@@ -26,12 +26,13 @@
             </div>     
  <?php  endforeach;?>
         <h3>Prix total : <?=$total?>€</h3>
-          <div class="OrderButton" onclick="redirection()">
+        <form method="POST" action="/basket/confirm">
+          <button class="Commander">
             <i class="fa-solid fa-credit-card"></i>
             Commander
-          </div>  
-        
- <?php    }else{?>
+          </button>
+        </form>
+    <?php } else{ ?>
         <div class="EmptyCart">
             <span>Aucun artice dans votre panier.</span>
         </div>
@@ -39,8 +40,3 @@
     }
 ?>
 </div>
-<script>
-    function redirection() {
-        window.location.href = '/CommandeConfirm';
-    }
-</script>
