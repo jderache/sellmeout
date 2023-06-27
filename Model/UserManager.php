@@ -8,7 +8,7 @@ class UserManager extends ModelManager{
         parent::__construct("user");
     }
 
-    public function getByEmail($mail){
+    public function getByEmail($mail) {
         $req = $this->bdd->prepare("SELECT * FROM " . $this->table . " WHERE mail = :mail");
         $req->bindParam(":mail", $mail);
         $req->execute();

@@ -57,27 +57,62 @@ class UserController extends BaseController{
     {
         $this->View("signin");
     }
+
+    function LoginView($error = null) 
+    {
+        if(isset($error)) {
+            $this->compact([
+                "error" => $error
+            ]);
+        }
+
+        $this->view("login");
+    }
+
     
-    function SignIn($mail, $password, $role) {
-        try {
-            $user = new \stdClass();
-            $user->mail = $mail;
+    function SignIn($mail, $password, $role) 
+    {
+        
+        $user = new \stdClass();
+        $user->mail = $mail;
+        $user->pseudo = $mail;
+        
+        if(!(filter_var($mail, FILTER_VALIDATE_EMAIL))) {
+            $this->compact([
+                "error" => "Mail invalide !",
+                "error_mail" => true,
+            ]);
+            $this->SignInForm();
+            exit();
+        }
+
+        if($this->userManager->getByEmail($mail)) {
+            $this->compact([
+                "error" => "Votre mail est déjà utilisé !<br>Veuillez en choisir un autre.",
+            ]);
             
-            // Vérification du mot de passe conforme
-            if (!$this->isValidPassword($password)) {
-                throw new \Exception("Le mot de passe doit respecter certains critères.");
-            }
-            
-            $user->password = password_hash($password, PASSWORD_DEFAULT);
-            $user->pseudo = $mail;
-            $user->role = $role;
-            
-            if ($this->userManager->create($user)) {
-                header("Location: /login");
-            }
-        } catch (\Exception $e) {
-            // Gestion des erreurs
-            echo "Une erreur s'est produite : " . $e->getMessage();
+            $this->SignInForm();
+            exit();
+        }
+
+        if(!(preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/', $password))) {
+            $this->compact([
+                "error" => "Votre mot de passe doit contenir au moins 8 caractères, une lettre majuscule,
+                une lette minuscule, un chiffre et un caractère spécial"
+            ]);
+
+            $this->SignInForm();
+            exit();
+        }
+        $user->role = $role;
+        $user->password = password_hash($password, PASSWORD_DEFAULT);
+
+        if ($this->userManager->create($user)) {
+            header("location: /login");
+            $this->compact(["success" => "Votre compte a bien été créé !<br>Vous pouvez maintenant vous connecter ci-dessous."]);
+        } else {
+            $this->compact(["error" => "Une erreur est survenue !"]);
+            $this->SignInForm();
         }
     }
 
@@ -103,11 +138,15 @@ class UserController extends BaseController{
               $_SESSION['user']=$user;
               header("location: /products");
            }else{
-            echo "Mot de passe érroné";
+            $this->compact([
+                "error" => "Mot de passe erroné!"
+            ]);
             $this->View("login");
            }
         }else{
-            echo "Email incorrect";
+            $this->compact([
+                "error" => "E-mail incorrect !"
+            ]);
             $this->View("login");
         }
 
