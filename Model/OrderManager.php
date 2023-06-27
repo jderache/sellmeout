@@ -25,10 +25,17 @@ class OrderManager extends ModelManager {
       }
     }
     public function getByUserId($userId) {
-        $query = "SELECT * FROM " . $this->table . " WHERE userId = ?";
+        $query = "SELECT orders.id, orders.created_at, product.nom, order_items.quantity, order_items.price
+                  FROM orders
+                  JOIN order_items ON orders.id = order_items.order_id
+                  JOIN product ON order_items.product_id = product.id
+                  WHERE orders.userId = ?";
+        
         $req = $this->bdd->prepare($query);
         $req->execute([$userId]);
+    
         return $req->fetchAll(\PDO::FETCH_OBJ);
     }
+    
     
 }
