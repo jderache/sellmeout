@@ -5,6 +5,16 @@
   font-size: 16px;
 }
 
+.container {
+  padding: 0 20px;
+  max-width: 1170px;
+  width: calc(100% - 40px);
+}
+.container h2,
+.container h1 {
+  text-align: center;
+  font-size: 25px;
+}
 header {
   align-content: center;
   align-items: center;
@@ -42,7 +52,11 @@ div.containerMenu {
   text-decoration: none;
   margin: 0 35px;
 }
-
+.my-form input,
+.my-form select,
+.my-form textarea {
+  margin-top: 5px;
+}
 header > div {
   align-content: center;
   align-items: center;
@@ -62,6 +76,12 @@ header > div {
     no-repeat;
   background-size: 0 100%;
   transition: background-size 0.3s;
+}
+.containerMenu a.add-product {
+  background-color: #f81649;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: white;
 }
 .containerMenu .navigation a:hover {
   background-size: 100% 100%;
@@ -99,10 +119,17 @@ body {
 .my-form {
   max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.my-form textarea {
+  height: 150px;
+  resize: none;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .form-input {
@@ -134,4 +161,23 @@ body {
 
 .form-button:hover {
   background-color: #f81649;
+}
+.icon > input {
+  padding-left: 0;
+  padding-right: 20px;
+  text-align: right;
+}
+.icon > i {
+  position: absolute;
+  display: block;
+  top: 15px;
+  pointer-events: none;
+  width: 25px;
+  text-align: center;
+  font-style: normal;
+  right: 0;
+}
+
+.icon {
+  position: relative;
 }

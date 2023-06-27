@@ -1,3 +1,7 @@
+<div class="container">
+<h1>Se connecter</h1>
+</div>
+
 <form method="POST" class="my-form"> 
     <input type="email" name="mail" class="form-input" placeholder="E-mail"/>
     <input type="password" name="password" class="form-input" placeholder="Password"/>

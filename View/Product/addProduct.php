@@ -1,16 +1,20 @@
-<h2>Ajout produit</h2>
-
-<form action="/product/new" method="POST">
-    <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom">
-    <label for="description">Description</label>
-    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-    <label for="price">prix</label>
-    <input type="number" id="price" name="price" step="0.01" min="0">
-    <select for='statut' name='statut'>
-        <option value='Publié'>Publié</option>
-        <option value='Non publié'>Non publié</option>
-    </select>
-    <button type="submit">Ajouter</button>
-
-</form>
+<div class="container">
+    <h2>Ajouter un produit à la vente</h2>
+</div>
+    <form class="my-form" action="/product/new" method="POST">
+        <label for="nom">Nom du produit</label>
+        <input class="form-input" type="text" id="nom" name="nom">
+        <label for="description">Description du produit</label>
+        <textarea class="form-input" name="description" id="description" cols="30" rows="10"></textarea>
+        <label for="price">Prix du produit</label>
+        <div class="icon">
+            <i>€</i>
+            <input class="form-input" type="number" id="price" name="price" step="0.01" min="0">
+        </div>
+        <label for="statut">Souhaitez-vous publier le produit immédiatement&nbsp;?</label>
+        <select class="form-select" id='statut' name='statut'>
+            <option value='1'>Oui</option>
+            <option value='0'>Non</option>
+        </select>
+        <button class="form-button" type="submit">Ajouter</button>
+    </form>
