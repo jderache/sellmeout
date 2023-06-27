@@ -105,5 +105,16 @@
     "action": "Search",
     "method": "GET",
     "manager": ["Product"]
+  },{
+    "path": "/basket/update",
+    "controller": "Basket",
+    "action": "UpdateQuantity",
+    "method": "POST"
+  },
+  {
+    "path": "/basket/delete",
+    "controller": "Basket",
+    "action": "DeleteFromCart",
+    "method": "POST"
   }
 ]
