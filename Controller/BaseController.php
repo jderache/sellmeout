@@ -47,4 +47,9 @@ class BaseController
             $this->params[$key] = $value;
         }
     }
+
+    public function redirect($url)
+    {
+        header("location: " . $url);
+    }
 }
