@@ -107,6 +107,7 @@ img.logo {
   width: 50px;
   padding: 10px;
 }
+
 a.logoLink {
   align-content: flex-start;
   align-items: flex-start;
@@ -206,15 +207,117 @@ body {
   position: relative;
 }
 
+@media screen and (min-width: 800px) {
+  #nav-icon1 {
+    display: none;
+  }
+}
+
+/* Menu Burger */
+
+#nav-icon1 {
+  width: 50px;
+  height: 40px;
+  position: relative;
+  margin: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  background: #f81649;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
 @media screen and (max-width: 800px) {
   div.navigation {
     display: none;
   }
-  div.containerMenu {
-    justify-content: center;
-  }
   a.logoLink {
     padding: 0;
     border: none;
+    margin: 0;
+  }
+  .navigation.open {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    position: absolute;
+    gap: 20px;
+    top: 75px;
+    max-width: calc(100% - 80px);
+    padding: 45px 0;
+    border-radius: 0 0 50px 50px;
+  }
+  .containerMenu .navigation a.active,
+  .containerMenu .navigation a:hover {
+    background-size: 30px 100%;
+  }
+  .containerMenu .navigation.open .my-products,
+  a.add-product.noactive {
+    position: relative;
+    top: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    display: flex;
+    justify-content: center;
+  }
+  header {
+    padding: 0 40px 0;
   }
 }
