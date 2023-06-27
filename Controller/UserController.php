@@ -81,6 +81,7 @@ class UserController extends BaseController{
            if (password_verify($password,$user->password)){
               unset($user->password);
               $_SESSION['user']=$user;
+              header("location: /products");
            }else{
             echo "Mot de passe érroné";
             $this->View("login");

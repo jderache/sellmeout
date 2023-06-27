@@ -7,6 +7,7 @@
     <title>SellMeOut</title>
     <link rel="stylesheet" href="../style.css">
     <?= (!empty($header))?$header:""; ?>
+    <script src="https://kit.fontawesome.com/63a8304b1d.js" crossorigin="anonymous"></script>
 </head>
 
 <?php 
@@ -25,7 +26,9 @@
                 <div class="navigation">
                     <a class="<?php if ($first_part=="products") {echo "active"; } else  {echo "noactive";}?>" href="/products">Nos produits</a>
                     <a class="<?php if ($first_part=="basket") {echo "active"; } else  {echo "noactive";}?>" href="/basket">Basket</a>
-                    <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login</a>
+                    <?php if(!isset($_SESSION['user'])){ ?>
+                        <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login</a>
+                    <?php } ?>
                     <a class="add-product <?php if ($first_part=="product") {echo "active"; } else  {echo "noactive";}?>" href="/product/new">Ajouter un produit</a>
                 </div>
         </div>
