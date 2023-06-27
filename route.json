@@ -14,38 +14,6 @@
     "manager": ["User"]
   },
   {
-    "path": "/user",
-    "controller": "User",
-    "action": "ShowUserList",
-    "method": "GET",
-    "manager": ["User"]
-  },
-  {
-    "path": "/user/([0-9]*)",
-    "controller": "User",
-    "action": "ShowUser",
-    "method": "GET"
-  },
-  {
-    "path": "/user",
-    "controller": "User",
-    "action": "CreateUser",
-    "method": "POST"
-  },
-  {
-    "path": "/user/update",
-    "controller": "User",
-    "action": "UpdateUser",
-    "method": "POST"
-  },
-  {
-    "path": "/user/delete",
-    "controller": "User",
-    "action": "DeleteUser",
-    "method": "GET"
-  },
-
-  {
     "path": "/signin",
     "controller": "User",
     "action": "SignInForm",
@@ -96,15 +64,15 @@
     "auth": ["admin", "seller"]
   },
   {
-      "path":"/basket",
-      "controller":"Basket",
-      "action":"ShowCart",
-      "method": "POST"
+    "path": "/basket",
+    "controller": "Basket",
+    "action": "ShowCart",
+    "method": "POST"
   },
   {
-      "path":"/basket",
-      "controller":"Basket",
-      "action":"ShowCart",
-      "method": "GET"
+    "path": "/basket",
+    "controller": "Basket",
+    "action": "ShowCart",
+    "method": "GET"
   }
 ]

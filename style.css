@@ -155,7 +155,15 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+.logout-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 0;
+  border-radius: 50px;
+  background: white !important;
+  padding: 10px 20px;
+  z-index: 4;
+}
 .form-button {
   display: block;
   width: 100%;
