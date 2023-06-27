@@ -7,6 +7,13 @@
     "manager": ["Product"]
   },
   {
+    "path": "/logout",
+    "controller": "User",
+    "action": "Logout",
+    "method": "GET",
+    "manager": ["User"]
+  },
+  {
     "path": "/user",
     "controller": "User",
     "action": "ShowUserList",

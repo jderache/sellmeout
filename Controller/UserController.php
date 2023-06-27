@@ -97,6 +97,6 @@ class UserController extends BaseController{
     {
         session_unset();
         session_destroy();
-        header("Location: /user/login");
+        header("Location: /login");
     }
 }
