@@ -83,6 +83,10 @@ header > div {
   padding: 10px 20px;
   border-radius: 50px;
   color: white;
+  position: absolute;
+  width: 150px;
+  top: 70px;
+  right: 20px;
 }
 .containerMenu .navigation a:hover {
   background-size: 100% 100%;

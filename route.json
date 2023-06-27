@@ -67,7 +67,7 @@
   {
     "path": "/login",
     "controller": "User",
-    "action": "Login",
+    "action": "login",
     "method": "POST",
     "manager": ["User"]
   },
@@ -84,13 +84,15 @@
     "controller": "Product",
     "action": "addProduct",
     "method": "POST",
-    "manager": ["product"]
+    "manager": ["product"],
+    "auth": ["admin", "seller"]
   },
   {
     "path": "/product/new",
     "controller": "Product",
     "action": "addProductView",
     "method": "GET",
-    "manager": ["product"]
+    "manager": ["product"],
+    "auth": ["admin", "seller"]
   }
 ]

@@ -25,7 +25,7 @@
             </a>
                 <div class="navigation">
                     <a class="<?php if ($first_part=="products") {echo "active"; } else  {echo "noactive";}?>" href="/products">Nos produits</a>
-                    <a class="<?php if ($first_part=="basket") {echo "active"; } else  {echo "noactive";}?>" href="/basket"><i class="fa-solid fa-basket-shopping"></i></a>
+                    <a class="<?php if ($first_part=="basket") {echo "active"; } else  {echo "noactive";}?>" href="/basket">Panier&nbsp;<i class="fa-solid fa-basket-shopping"></i></a>
                     <?php if(!isset($_SESSION['user'])){ ?>
                         <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login&nbsp;<i class="fa-solid fa-right-to-bracket"></i></a>
                     <?php } ?>

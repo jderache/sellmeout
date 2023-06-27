@@ -65,7 +65,7 @@ class UserController extends BaseController{
         $user->pseudo = $mail;
         $user->role = $role;
         if ($this->userManager->create($user)) {
-            echo "Utilisateur créé !";
+            header("Location: /login");
         }
     }
 

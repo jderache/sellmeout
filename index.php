@@ -20,7 +20,7 @@ foreach ($routes as $route) {
 if (count($result) == 1) {
     if(!empty($result[0]->auth)) {
         if(!isset($_SESSION['user'])) {
-            header('Location: /Login');
+            header('Location: /login');
         }elseif(array_search($_SESSION['user']->role, $result[0]->auth) === false) {
             header("Location: /error");
         }
