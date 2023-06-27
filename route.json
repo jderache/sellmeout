@@ -1,5 +1,12 @@
 [
   {
+    "path": "/",
+    "controller": "Product",
+    "action": "ShowProducts",
+    "method": "GET",
+    "manager": ["Product"]
+  },
+  {
     "path": "/user",
     "controller": "User",
     "action": "ShowUserList",
@@ -70,17 +77,13 @@
     "controller": "Product",
     "action": "addProduct",
     "method": "POST",
-        "manager": [
-            "product"
-        ]
+    "manager": ["product"]
   },
   {
     "path": "/product/new",
     "controller": "Product",
     "action": "addProductView",
     "method": "GET",
-    "manager": [
-        "product"
-    ]
+    "manager": ["product"]
   }
 ]

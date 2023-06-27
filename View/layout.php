@@ -29,7 +29,12 @@
                     <?php if(!isset($_SESSION['user'])){ ?>
                         <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login</a>
                     <?php } ?>
-                    <a class="add-product <?php if ($first_part=="product") {echo "active"; } else  {echo "noactive";}?>" href="/product/new">Ajouter un produit</a>
+                    <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
+                        <a class="add-product <?php if ($first_part=="product") {echo "active"; } else  {echo "noactive";}?>" href="/product/new">Ajouter un produit</a>
+                    <?php } ?>
+                    <?php if(isset($_SESSION['user'])){ ?>
+                        <a class="<?php if ($first_part=="logout") {echo "active"; } else  {echo "noactive";}?>" href="/logout">Logout</a>
+                    <?php } ?>
                 </div>
         </div>
     </header>
