@@ -76,15 +76,15 @@
     "method": "GET"
   },
   {
-    "path": "/user",
+    "path": "/my-products",
     "controller": "User",
     "action": "Profile",
     "method": "GET",
-    "auth": ["admin", "seller","buyer"],
+    "auth": ["admin", "seller"],
     "manager": ["Product"]
   },
   {
-    "path": "/Product/Status/([0-9]*)",
+    "path": "/product/status/([0-9]*)",
     "controller": "Product",
     "action": "Status",
     "method": "POST",

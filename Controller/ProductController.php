@@ -40,6 +40,6 @@ class ProductController extends BaseController {
     function status($product_id)
     {
         $this->productManager->ToggleStatus($product_id,$_SESSION['user']->id);
-        $this->redirect("/user");
+        $this->redirect("/my-products");
     }
 }

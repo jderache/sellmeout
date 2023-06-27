@@ -24,7 +24,7 @@
                 <img alt="SellMeOut" src="../Images/logo.png" class="logo">
             </a>
                 <div class="navigation">
-                    <a class="<?php if ($first_part=="products") {echo "active"; } else  {echo "noactive";}?>" href="/products">Nos produits</a>
+                    <a class="<?php if ($first_part=="products") {echo "active"; } else  {echo "noactive";}?>" href="/products">Les produits en vente</a>
                     <a class="<?php if ($first_part=="basket") {echo "active"; } else  {echo "noactive";}?>" href="/basket">Panier&nbsp;<i class="fa-solid fa-basket-shopping"></i></a>
                     <?php if(!isset($_SESSION['user'])){ ?>
                         <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login&nbsp;<i class="fa-solid fa-right-to-bracket"></i></a>
@@ -33,7 +33,7 @@
                         <a class="<?php if ($first_part=="logout") {echo "active"; } else  {echo "noactive";}?>" href="/user"><i class="fa-solid fa-user"></i></a>
                     <?php } ?>
                     <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
-                        <a class="add-product my-products <?php if ($first_part=="user") {echo "active"; } else  {echo "noactive";}?>" href="/user">Mes produits</a>
+                        <a class="add-product my-products <?php if ($first_part=="user") {echo "active"; } else  {echo "noactive";}?>" href="/my-products">Mes produits</a>
                     <?php } ?>
                     <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
                         <a class="add-product <?php if ($first_part=="product") {echo "active"; } else  {echo "noactive";}?>" href="/product/new">Ajouter un produit</a>
