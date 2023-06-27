@@ -57,17 +57,37 @@ class UserController extends BaseController{
     {
         $this->View("signin");
     }
-
+    
     function SignIn($mail, $password, $role) {
-        $user = new \stdClass();
-        $user->mail = $mail;
-        $user->password = password_hash($password,PASSWORD_DEFAULT);
-        $user->pseudo = $mail;
-        $user->role = $role;
-        if ($this->userManager->create($user)) {
-            header("Location: /login");
+        try {
+            $user = new \stdClass();
+            $user->mail = $mail;
+            
+            // Vérification du mot de passe conforme
+            if (!$this->isValidPassword($password)) {
+                throw new \Exception("Le mot de passe doit respecter certains critères.");
+            }
+            
+            $user->password = password_hash($password, PASSWORD_DEFAULT);
+            $user->pseudo = $mail;
+            $user->role = $role;
+            
+            if ($this->userManager->create($user)) {
+                header("Location: /login");
+            }
+        } catch (\Exception $e) {
+            // Gestion des erreurs
+            echo "Une erreur s'est produite : " . $e->getMessage();
         }
     }
+
+    function isValidPassword($password) {
+        // Expression régulière pour vérifier les critères du mot de passe
+        $pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+        return preg_match($pattern, $password);
+    }
+    
+    
 
     function LoginForm()
     {

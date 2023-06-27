@@ -8,6 +8,7 @@
                     <h3><?= $product->nom ?></h3>
                     <p><?= $product->description ?></p>
                     <p><?= $product->price ?> €</p>
+                    <p><?= $product->pseudo ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

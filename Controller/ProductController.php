@@ -5,7 +5,8 @@ class ProductController extends BaseController {
     protected $productManager;
 
     function ShowProducts(){
-        $products = $this->productManager->getAll();
+        
+        $products = $this->productManager->getAllWithUser();
         $this->compact(["products" => $products]);
         $this->view("products");
     }
