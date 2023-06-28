@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SellMeOut</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
     <?= (!empty($header))?$header:""; ?>
     <script src="https://kit.fontawesome.com/63a8304b1d.js" crossorigin="anonymous"></script>
 </head>
@@ -21,7 +21,7 @@
     <header>
         <div class="containerMenu">
             <a aria-label="HomePage" href="/" title="SellMeOut" class="logoLink">
-                <img alt="SellMeOut" src="../Images/logo.png" class="logo">
+                <img alt="SellMeOut" src="/Images/logo.png" class="logo">
             </a>
             <div class="navigation">
                 <a class="<?php if ($first_part=="products") {echo "active"; } else  {echo "noactive";}?>" href="/products">Les produits en vente</a>

@@ -32,7 +32,7 @@ class BaseController
     public function View($template)
     {
         if (file_exists("View/" .$this->route->controller . "/css/$template.css")) {
-            $header = '<link rel="stylesheet" href="View/' . $this->route->controller . '/css/' . $template . '.css">';
+            $header = '<link rel="stylesheet" href="/View/' . $this->route->controller . '/css/' . $template . '.css">';
         }
         ob_start();
         extract($this->params);

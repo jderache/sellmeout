@@ -48,5 +48,15 @@ class ProductManager extends ModelManager{
         }
        
     }
+
+    public function getBySearch($search)
+    {
+        $req = $this->bdd->prepare("SELECT * FROM product 
+        WHERE product.nom LIKE :search");
+        $req->bindValue(":search", "%" . $search . "%");
+        $req->execute();
+        $req->setFetchMode(\PDO::FETCH_OBJ);
+        return $req->fetchAll();
+    }
     
 }

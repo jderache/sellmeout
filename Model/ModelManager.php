@@ -74,6 +74,7 @@ class ModelManager
             throw new \Exception("id introuvable");
         }
     }
+    
     public function delete($id)
     {
         $req = $this->bdd->prepare("DELETE FROM " . $this->table . " WHERE id= :id");
