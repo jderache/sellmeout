@@ -2,6 +2,10 @@
     <div class="products">
         <h2>Liste des produits en vente</h2>
         <div class="products-list">
+            <?php if(empty($products)): ?>
+                <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour le moment.<br>Revenez plus tard !</p>
+            <?php endif; ?>
+
             <?php foreach($products as $product): ?>
                 <div class="product-card" data-href="/Product/<?= $product->id ?>">
                     <img src="<?= $product->image ?>" alt="">
@@ -15,6 +19,7 @@
                     </form>
                 </div>
             <?php endforeach; ?>
+
         </div>
     </div>
 </div>

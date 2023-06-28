@@ -9,7 +9,7 @@ class OrderController extends BaseController {
         $this->orderManager->addOrder($_SESSION["panier"], $_SESSION["user"]->id);
         echo "Commande enregistrée !";
         unset($_SESSION['panier']);
-        header('Location: /basket');
+        
     }
     
 }

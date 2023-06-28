@@ -23,6 +23,7 @@
   transition: 200ms ease-in-out;
   cursor: pointer;
   width: auto;
+  max-width: 220px;
 }
 
 .product-card p,

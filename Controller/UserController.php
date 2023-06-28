@@ -192,9 +192,9 @@ class UserController extends BaseController
                 $this->compact(["orders"=> $orders]);
                 break;
             case "seller":
-                // $listSellerProduct = $this->productManager->getAllSeller($_SESSION['user']->id);
-                // $this->compact(["listSellerProduct"=> $listSellerProduct]);
-                // break;
+                $sellerOrders = $this->orderManager->getBySellerId($_SESSION['user']->id);
+                $this->compact(["sellerOrders" => $sellerOrders]);
+                break;
             case "admin":
 
 
