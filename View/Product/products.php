@@ -19,7 +19,12 @@
                     <?php endif; ?>
                     <form method="post" action="/basket/add">
                         <input type="hidden" name="id" value="<?= $product->id ?>">
-                        <input type="submit" value="Ajouter au panier">
+                        <div class="button-add">
+                            <button type="submit" class="button-add-to-cart" value="Ajouter au panier"> 
+                                Ajouter au panier
+                                <i class="fa-sharp fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
             <?php endforeach; ?>
