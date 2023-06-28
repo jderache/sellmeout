@@ -100,11 +100,11 @@
     "manager": ["Product"]
   },
   {
-    "path": "/search/([a-zA-Z0-9]*)",
-    "controller": "Product",
-    "action": "Search",
+    "path":"/products/search/([a-zA-Z0-9%]*)",
+    "controller":"Product",
+    "action":"ShowSearchProducts",
     "method": "GET",
-    "manager": ["Product"]
+    "manager": ["product"]
   },
   {
     "path": "/basket/update",
