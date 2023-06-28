@@ -5,7 +5,7 @@
         <a href="/products/search/" id="search-btn">Rechercher</a>
         <div class="products-list">
             <?php if(empty($products)): ?>
-                <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour cette recherche moment.<br>Revenez plus tard !</p>
+                <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour le moment.<br>Revenez plus tard !</p>
             <?php endif; ?>
 
             <?php foreach($products as $product): ?>

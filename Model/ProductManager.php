@@ -51,8 +51,8 @@ class ProductManager extends ModelManager{
 
     public function getBySearch($search)
     {
-        $req = $this->bdd->prepare("SELECT * FROM product 
-        WHERE product.nom LIKE :search");
+        $req = $this->bdd->prepare("SELECT * FROM product
+        WHERE product.nom LIKE :search AND product.statut = 1");
         $req->bindValue(":search", "%" . $search . "%");
         $req->execute();
         $req->setFetchMode(\PDO::FETCH_OBJ);
