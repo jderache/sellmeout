@@ -53,3 +53,13 @@
   margin-left: 5px;
   color: black;
 }
+.button-add-to-cart{
+  color: white;
+  background-color: #f81649;
+  margin-top: 10px;
+  padding: 8px;
+  border: 0px;
+  border-radius: 10px;
+  height: 50%;
+  width: 75%;
+}
