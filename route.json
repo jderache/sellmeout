@@ -67,13 +67,15 @@
     "path": "/basket",
     "controller": "Basket",
     "action": "ShowCart",
-    "method": "POST"
+    "method": "POST",
+    "auth": ["buyer"]
   },
   {
     "path": "/basket",
     "controller": "Basket",
     "action": "ShowCart",
-    "method": "GET"
+    "method": "GET",
+    "auth": ["buyer"]
   },
   {
     "path": "/my-products",
@@ -100,9 +102,9 @@
     "manager": ["Product"]
   },
   {
-    "path":"/products/search/([a-zA-Z0-9%]*)",
-    "controller":"Product",
-    "action":"ShowSearchProducts",
+    "path": "/products/search/([a-zA-Z0-9%]*)",
+    "controller": "Product",
+    "action": "ShowSearchProducts",
     "method": "GET",
     "manager": ["product"]
   },
@@ -110,26 +112,30 @@
     "path": "/basket/update",
     "controller": "Basket",
     "action": "UpdateQuantity",
-    "method": "POST"
+    "method": "POST",
+    "auth": ["buyer"]
   },
   {
     "path": "/basket/add",
     "controller": "Basket",
     "action": "AddToCart",
     "method": "POST",
-    "manager": ["Product"]
+    "manager": ["Product"],
+    "auth": ["buyer"]
   },
   {
     "path": "/basket/delete",
     "controller": "Basket",
     "action": "DeleteFromCart",
-    "method": "POST"
+    "method": "POST",
+    "auth": ["buyer"]
   },
   {
     "path": "/basket/confirm",
     "controller": "Order",
     "action": "addOrder",
     "method": "POST",
-    "manager": ["Order"]
+    "manager": ["Order"],
+    "auth": ["buyer"]
   }
 ]

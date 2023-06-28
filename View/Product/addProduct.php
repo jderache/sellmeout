@@ -1,6 +1,5 @@
 <div class="container">
     <h2>Ajouter un produit à la vente</h2>
-</div>
     <form class="my-form" action="/product/new" method="POST">
         <label for="nom">Nom du produit</label>
         <input class="form-input" type="text" id="nom" name="nom" required>
@@ -18,3 +17,4 @@
         </select>
         <button class="form-button" type="submit">Ajouter</button>
     </form>
+</div>

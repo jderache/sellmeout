@@ -32,7 +32,7 @@
                     <a class="<?php if ($first_part=="login") {echo "active"; } else  {echo "noactive";}?>" href="/login">Login&nbsp;<i class="fa-solid fa-right-to-bracket"></i></a>
                 <?php } ?>
                 <?php if(isset($_SESSION['user'])){ ?>
-                    <a class="<?php if ($first_part=="logout") {echo "active"; } else  {echo "noactive";}?>" href="/user">Mon profil&nbsp;<i class="fa-solid fa-user"></i></a>
+                    <a class="<?php if ($first_part=="user") {echo "active"; } else  {echo "noactive";}?>" href="/user">Mon profil&nbsp;<i class="fa-solid fa-user"></i></a>
                 <?php } ?>
                 <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
                     <a class="add-product my-products <?php if ($first_part=="user") {echo "active"; } else  {echo "noactive";}?>" href="/my-products">Mes produits</a>

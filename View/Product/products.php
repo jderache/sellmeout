@@ -1,8 +1,12 @@
 <div class="container">
     <div class="products">
         <h2>Liste des produits en vente</h2>
-        <input type="search" id="search">
-        <a href="/products/search/" id="search-btn">Rechercher</a>
+        <?php if(!empty($products)): ?>
+        <div class="search-bar">
+            <input type="search" id="search">
+            <a href="/products/search/" id="search-btn">Rechercher</a>
+        </div>
+        <?php endif; ?>
         <div class="products-list">
             <?php if(empty($products)): ?>
                 <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour le moment.<br>Revenez plus tard !</p>
@@ -17,6 +21,7 @@
                     <?php if(isset($product->pseudo)): ?>
                         <p><?= $product->pseudo ?></p>
                     <?php endif; ?>
+                    
                     <form method="post" action="/basket/add">
                         <input type="hidden" name="id" value="<?= $product->id ?>">
                         <div class="button-add">

@@ -42,18 +42,32 @@
   white-space: nowrap;
 }
 
-#search{
-  padding: 2px;
-  border: 1px solid black;
-  border-radius: 15px;
+#search {
+  border: 2px solid grey;
+  border-radius: 50px;
+  background: white;
+  padding: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
 }
 
-#search-btn{
+#search-btn {
   text-decoration: none;
   margin-left: 5px;
   color: black;
+  background: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 2px solid black;
 }
-.button-add-to-cart{
+.button-add-to-cart {
+  cursor: pointer;
   color: white;
   background-color: #f81649;
   margin-top: 10px;

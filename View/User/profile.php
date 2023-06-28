@@ -26,8 +26,10 @@
                                                 <p>Prix : <?= $product->price; ?> €</p>
                                           </div>
                                     </div>
-                              <?php endforeach; ?>
-                              <p>Prix total de la commande : <?= $totalPrice; ?> €</p>
+                                    <?php endforeach; ?>
+                              <div class="container-price">
+                                    <p class="price">Prix total de la commande : <?= $totalPrice; ?> €</p>
+                              </div>
                         </details>
                         </div>
                   <?php endforeach; ?>

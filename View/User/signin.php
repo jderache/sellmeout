@@ -10,8 +10,6 @@
         <?= $success; ?>
 </div>
 <?php }?>
-</div>
-
 <form method="POST" class="my-form">
     <input type="email" name="mail" class="form-input" required placeholder="E-mail"/>
     <input type="password" name="password" class="form-input" required placeholder="Password"/>
@@ -23,3 +21,4 @@
 </form>
 
 <p style="text-align: center;">Vous avez déjà un compte&nbsp;? <a style="color: #F81649;" href="/login">Se connecter</a>.</p>
+</div>
