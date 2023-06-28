@@ -12,7 +12,6 @@
                         <details>
                               <?php $date = new DateTime($order->created_at);
                               $formattedDate = $date->format('d/m/Y'); ?>
-                        
                               <summary class="order">Commande n°<?= $order->id; ?>&nbsp;-&nbsp;<?= $formattedDate ?></summary>
                               <?php foreach($order->products as $product): ?>
                                     <?php $productTotalPrice = $product->price * $product->quantity; 
@@ -33,6 +32,14 @@
                         </details>
                         </div>
                   <?php endforeach; ?>
+            <?php endif; ?>
+      <?php } ?>
+      <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
+            <h1>Mes ventes</h1>
+            <?php if(empty($products)): ?>
+                  <p>Vous n'avez pas encore de produits vendus</p>
+            <?php else: ?>
+            
             <?php endif; ?>
       <?php } ?>
     </div>

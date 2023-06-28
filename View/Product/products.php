@@ -8,9 +8,11 @@
         </div>
         <?php endif; ?>
         <div class="products-list">
-            <?php if(empty($products)): ?>
-                <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour le moment.<br>Revenez plus tard !</p>
-            <?php endif; ?>
+        <?php if(empty($products) && strpos($_SERVER['REQUEST_URI'], '/search/') !== false): ?>
+            <p style="text-align: center; color:#F81649;">Aucun produit n'a été trouvé.<br/><a href="/products" >Retourner à la liste des produits</a></p>
+        <?php elseif(empty($products)): ?>
+            <p style="text-align: center; color:#F81649;">Il n'y a pas de produit en vente pour le moment.<br>Revenez plus tard !</p>
+        <?php endif; ?>
 
             <?php foreach($products as $product): ?>
                 <div class="product-card" data-href="/product/<?= $product->id ?>">
@@ -21,16 +23,19 @@
                     <?php if(isset($product->pseudo)): ?>
                         <p><?= $product->pseudo ?></p>
                     <?php endif; ?>
-                    
-                    <form method="post" action="/basket/add">
-                        <input type="hidden" name="id" value="<?= $product->id ?>">
-                        <div class="button-add">
-                            <button type="submit" class="button-add-to-cart" value="Ajouter au panier"> 
-                                Ajouter au panier
-                                <i class="fa-sharp fa-solid fa-cart-plus"></i>
-                            </button>
-                        </div>
-                    </form>
+
+                    <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"): ?>
+                    <?php else: ?>
+                        <form method="post" action="/basket/add">
+                            <input type="hidden" name="id" value="<?= $product->id ?>">
+                            <div class="button-add">
+                                <button type="submit" class="button-add-to-cart" value="Ajouter au panier"> 
+                                    Ajouter au panier
+                                    <i class="fa-sharp fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </form>
+                    <?php endif; ?>
                 </div>
             <?php endforeach; ?>
 
