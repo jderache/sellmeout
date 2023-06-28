@@ -41,3 +41,15 @@
   line-height: 1.2;
   white-space: nowrap;
 }
+
+#search{
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#search-btn{
+  text-decoration: none;
+  margin-left: 5px;
+  color: black;
+}
