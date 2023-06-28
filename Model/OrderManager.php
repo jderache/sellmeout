@@ -25,11 +25,9 @@ class OrderManager extends ModelManager {
       }
     }
     public function getByUserId($userId) {
-        $query = "SELECT orders.id, orders.created_at, product.nom, order_items.quantity, order_items.price
-                  FROM orders
-                  JOIN order_items ON orders.id = order_items.order_id
-                  JOIN product ON order_items.product_id = product.id
-                  WHERE orders.userId = ?";
+        $query = "SELECT orders.id, orders.created_at
+        FROM orders
+        WHERE orders.userId = ?";
         
         $req = $this->bdd->prepare($query);
         $req->execute([$userId]);
@@ -38,11 +36,9 @@ class OrderManager extends ModelManager {
     }
 
     public function getBySellerId($sellerId) {
-        $query = "SELECT orders.id, orders.created_at, product.nom, order_items.quantity, order_items.price
+        $query = "SELECT orders.id, orders.created_at
                   FROM orders
-                  JOIN order_items ON orders.id = order_items.order_id
-                  JOIN product ON order_items.product_id = product.id
-                  WHERE product.seller_id = ?";
+                  WHERE orders.userId = ?";
         
         $req = $this->bdd->prepare($query);
         $req->execute([$sellerId]);

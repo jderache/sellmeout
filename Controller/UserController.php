@@ -8,6 +8,7 @@ class UserController extends BaseController
     protected $userManager;
     protected $productManager;
     protected $orderManager;
+    protected $orderItemsManager;
 
     function ShowUserList()
     {
@@ -189,7 +190,10 @@ class UserController extends BaseController
         switch ($_SESSION['user']->role) {
             case "buyer":
                 $orders = $this->orderManager->getByUserId($_SESSION['user']->id);
-                $this->compact(["orders"=> $orders]);
+                    foreach($orders as $order) {
+                    $order->products = $this->orderItemsManager->getItemsByCommandId($order->id);
+                }
+                $this->compact(["orders" => $orders]);
                 break;
             case "seller":
                 $sellerOrders = $this->orderManager->getBySellerId($_SESSION['user']->id);

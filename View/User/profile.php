@@ -10,9 +10,11 @@
                         <div class="order">
                               <p>Commande n°<?= $order->id; ?></p>
                               <p>Le <?= $order->created_at; ?></p>
-                              <p>Produit : <?= $order->nom; ?></p>
-                              <p>Quantité : <?= $order->quantity; ?></p>
-                              <p>Prix : <?= $order->price; ?> €</p>
+                              <?php foreach($order->products as $product): ?>
+                                    <p>Produit : <?= $product->nom; ?></p>
+                                    <p>Quantité : <?= $product->quantity; ?></p>
+                                    <p>Prix : <?= $product->price; ?> €</p>
+                              <?php endforeach; ?>
                         </div>
                   <?php endforeach; ?>
             <?php endif; ?>

@@ -89,7 +89,7 @@
     "action": "Profile",
     "method": "GET",
     "auth": ["admin", "seller", "buyer"],
-    "manager": ["Product", "Order"]
+    "manager": ["Product", "Order", "OrderItems"]
   },
   {
     "path": "/product/status/([0-9]*)",
