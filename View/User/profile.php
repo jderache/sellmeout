@@ -7,6 +7,7 @@
             <?php else: ?>
                   <h1>Mes commandes</h1>
                   <?php foreach($orders as $order): ?>
+                        <?php $totalPrice = 0; ?>
                         <div class="order">
                         <details>
                               <?php $date = new DateTime($order->created_at);
@@ -14,6 +15,9 @@
                         
                               <summary class="order">Commande n°<?= $order->id; ?>&nbsp;-&nbsp;<?= $formattedDate ?></summary>
                               <?php foreach($order->products as $product): ?>
+                                    <?php $productTotalPrice = $product->price * $product->quantity; 
+                                          $totalPrice += $productTotalPrice;
+                                    ?>
                                     <div class="product">
                                           <img src="<?= $product->image; ?>" alt="" srcset="">
                                           <div class="desc">
@@ -23,6 +27,7 @@
                                           </div>
                                     </div>
                               <?php endforeach; ?>
+                              <p>Prix total de la commande : <?= $totalPrice; ?> €</p>
                         </details>
                         </div>
                   <?php endforeach; ?>
