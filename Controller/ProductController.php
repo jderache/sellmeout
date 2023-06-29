@@ -29,6 +29,7 @@ class ProductController extends BaseController {
             header("Location: /products");
             exit;
         }
+        $product->rate = $this->rateManager->getAvgRateProduct($product->id);
         $this->compact(["product" => $product]);
         $this->view("product");
     }

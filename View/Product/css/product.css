@@ -4,3 +4,24 @@
   display: flex;
   border-radius: 30px;
 }
+.stars {
+  color: orange;
+  padding: 20px 0;
+}
+.button-add-to-cart {
+  cursor: pointer;
+  color: white;
+  background-color: #f81649;
+  margin-top: 10px;
+  padding: 8px;
+  border: 0px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.product-card p {
+  margin: 0;
+}
+.product-card .desc {
+  margin-left: 30px;
+}
