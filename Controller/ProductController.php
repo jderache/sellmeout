@@ -25,6 +25,10 @@ class ProductController extends BaseController {
 
     function showProduct($id) {
         $product = $this->productManager->getWithUserById($id);
+        if($product == false) {
+            header("Location: /products");
+            exit;
+        }
         $this->compact(["product" => $product]);
         $this->view("product");
     }

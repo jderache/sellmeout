@@ -9,6 +9,10 @@
   width: 100%;
   justify-content: center;
 }
+
+.products-list a {
+  text-decoration: none;
+}
 .product-card img {
   max-width: 220px;
   width: 100%;
@@ -78,6 +82,6 @@
   width: 75%;
 }
 
-.stars{
+.stars {
   color: orange;
 }
