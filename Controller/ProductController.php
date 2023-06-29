@@ -69,7 +69,6 @@ class ProductController extends BaseController {
                 $this->json([
                     "success" => true
                 ]);
-
                 exit;
             }
         }

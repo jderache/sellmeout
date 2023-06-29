@@ -20,7 +20,14 @@
                     <h3><?= $product->nom ?></h3>
                     <p><?= $product->description ?></p>
                     <p><?= $product->price ?> €</p>
-                    <p>Notes : <?= $product->rate ?></p>
+                    <p>Notes :</p>
+                    <div class="stars">
+                        <?php 
+                        for ($i = 0; $i < $product->rate; $i++) {
+                            echo '<i class="fa-solid fa-star" id="stars"></i>';
+                        }
+                        ?>
+                    </div>
                     <p><?= $product->pseudo ?></p>
 
                     <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"): ?>
