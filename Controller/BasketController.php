@@ -22,7 +22,7 @@ class BasketController extends BaseController{
         }
         if(isset($_SESSION['panier'][$id])){
             $previousQte = $_SESSION['panier'][$id]['quantite'];
-            $quantite = $previousQte++;
+            $quantite = $previousQte+1;
             $_SESSION['panier'][$id]['quantite'] = $quantite;
             $_SESSION['panier'][$id]["prix"] = $_SESSION['panier'][$id]['quantite'] * $product->price;
         }else{

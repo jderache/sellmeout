@@ -40,20 +40,38 @@
       <?php } ?>
       <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
             <h1>Mes ventes</h1>
-            <?php foreach($orders as $order): ?>
-                  <?php foreach($products as $product): ?>
-                        <div class="product">
-                              <img src="<?= $product->image; ?>" alt="" srcset="">
-                              <div class="desc">
-                                    <p>Produit : <?= $product->nom; ?></p>
-                                    <p>Quantité : <?= $product->quantity; ?></p>
-                                    <p>Prix : <?= $product->price; ?> €</p>
-                                    <p>Commandes : <?= $product->nb_orders; ?></p>
-                                    <p>Note : <?= $product->rate; ?></p>
+            <?php if(empty($orders)): ?>
+                  <p>Vous n'avez aucune vente</p>
+            <?php else: ?>
+                  <?php foreach($orders as $order): ?>
+                        <?php $totalPrice = 0; ?>
+                        <div class="order">
+                        <details>
+                              <?php $date = new DateTime($order->created_at);
+                              $formattedDate = $date->format('d/m/Y'); ?>
+                              <summary class="order">Commande n°<?= $order->id; ?>&nbsp;-&nbsp;<?= $formattedDate ?></summary>
+                              <?php foreach($order->products as $product): ?>
+                                    <?php if ($product->userId == $_SESSION['user']->id) : ?> 
+                                          <?php $productTotalPrice = $product->price * $product->quantity; 
+                                                $totalPrice += $productTotalPrice;
+                                          ?>
+                                          <div class="product">
+                                                <img src="<?= $product->image; ?>" alt="" srcset="">
+                                                <div class="desc">
+                                                      <p>Produit : <?= $product->nom; ?></p>
+                                                      <p>Quantité : <?= $product->quantity; ?></p>
+                                                      <p>Prix : <?= $product->price; ?> €</p>
+                                                </div>
+                                          </div>
+                                    <?php endif; ?>
+                              <?php endforeach; ?>
+                              <div class="container-price">
+                                    <p class="price">Prix total de la commande : <?= $totalPrice; ?> €</p>
                               </div>
+                        </details>
                         </div>
                   <?php endforeach; ?>
-            <?php endforeach; ?>
+            <?php endif; ?>
       <?php } ?>
     </div>
 </div>
