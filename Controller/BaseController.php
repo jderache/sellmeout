@@ -35,6 +35,10 @@ class BaseController
         if (file_exists("View/" .$this->route->controller . "/css/$template.css")) {
             $header = '<link rel="stylesheet" href="/View/' . $this->route->controller . '/css/' . $template . '.css">';
         }
+        if (file_exists("View/" . $this->route->controller . "/scripts/$template.js")) {
+            $headers[] = "<script src='/View/" . $this->route->controller . "/scripts/$template.js' defer></script>";
+        }
+
         ob_start();
         extract($this->params);
         include "View/". $this->route->controller ."/$template.php";
