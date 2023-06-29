@@ -64,6 +64,13 @@
     "auth": ["admin", "seller"]
   },
   {
+    "path": "/product/([0-9]*)",
+    "controller": "Product",
+    "action": "ShowProduct",
+    "method": "GET",
+    "manager": ["product"]
+  },
+  {
     "path": "/basket",
     "controller": "Basket",
     "action": "ShowCart",
@@ -109,14 +116,11 @@
     "manager": ["Product", "Rate"]
   },
   {
-    "path":"/products/([0-9]*)/rate",
-    "controller":"Product",
+    "path": "/products/([0-9]*)/rate",
+    "controller": "Product",
     "action": "takeRate",
     "method": "POST",
-    "manager": [
-      "product",
-      "rate"
-    ]
+    "manager": ["product", "rate"]
   },
   {
     "path": "/basket/update",

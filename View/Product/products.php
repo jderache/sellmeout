@@ -15,6 +15,7 @@
         <?php endif; ?>
 
             <?php foreach($products as $product): ?>
+                <a href="/product/<?= $product->id ?>">
                 <div class="product-card" data-href="/product/<?= $product->id ?>">
                     <img src="<?= $product->image ?>" alt="">
                     <h3><?= $product->nom ?></h3>
@@ -43,6 +44,7 @@
                         </form>
                     <?php endif; ?>
                 </div>
+                </a>
             <?php endforeach; ?>
 
             <script>

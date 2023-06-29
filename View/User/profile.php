@@ -3,9 +3,9 @@
         <!-- <p>Vous êtes connectés en tant que <?= $user->pseudo; ?></p> -->
         <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "buyer"){ ?>
             <?php if(empty($orders)): ?>
-                  <p>Vous n'avez passer aucune commande</p>
-            <?php else: ?>
                   <h1>Mes commandes</h1>
+                  <p style="text-align: center;">Vous n'avez encore passé aucune commande pour le moment.</p>
+            <?php else: ?>
                   <?php foreach($orders as $order): ?>
                         <?php $totalPrice = 0; ?>
                         <div class="order">
@@ -41,7 +41,7 @@
       <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
             <h1>Mes ventes</h1>
             <?php if(empty($orders)): ?>
-                  <p>Vous n'avez aucune vente</p>
+                  <p style="text-align: center;">Vous n'avez encore réalisé aucune vente pour le moment.</p>
             <?php else: ?>
                   <?php foreach($orders as $order): ?>
                         <?php $totalPrice = 0; ?>

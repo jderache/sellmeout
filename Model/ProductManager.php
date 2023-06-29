@@ -10,6 +10,13 @@ class ProductManager extends ModelManager{
         parent::__construct("product");
     }
 
+    public function getWithUserById($id) {
+        $req = $this->bdd->prepare("SELECT product.*, user.pseudo FROM product INNER JOIN user ON product.userId = user.id WHERE product.id = ?");
+        $req->setFetchMode(\PDO::FETCH_OBJ);
+        $req->execute([$id]);
+        return $req->fetch();
+      }
+
     public function getAllWithUser(){
         $req = $this->bdd->prepare("SELECT product.*,user.pseudo FROM " . $this->table . " INNER JOIN user ON product.userId = user.id WHERE product.statut = :statut");
         $val = 1;

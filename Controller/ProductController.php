@@ -24,7 +24,7 @@ class ProductController extends BaseController {
     }
 
     function showProduct($id) {
-        $product = $this->productManager->getById($id);
+        $product = $this->productManager->getWithUserById($id);
         $this->compact(["product" => $product]);
         $this->view("product");
     }
