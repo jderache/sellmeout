@@ -61,7 +61,6 @@ class ProductController extends BaseController {
     }
 
     function takeRate($id, $rate){
-        $this->rateManager->getCurrentRate($id, $_SESSION["user"]->id);
         $this->rateManager->takeRateProduct(intval($id), $rate);
         header('Location: /user');
     }
