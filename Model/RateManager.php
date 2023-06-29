@@ -28,4 +28,12 @@ class RateManager extends ModelManager{
         return $req->fetch();
     }
 
+    public function getAvgRateProduct($product_id) {
+        $req = $this->bdd->prepare("SELECT AVG(rating) AS moyenne_note FROM rates WHERE productId = :productId ;");
+        $req->bindParam(":productId", $product_id);
+        $req->execute();
+        $result = $req->fetch(\PDO::FETCH_ASSOC);
+        $average_rating = $result['moyenne_note'] !== null ? number_format($result['moyenne_note'], 0, '', '') : null;
+        return $average_rating;
+    }
 }

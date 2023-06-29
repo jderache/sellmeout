@@ -8,10 +8,7 @@ class ProductController extends BaseController {
     function ShowProducts(){
         $products = $this->productManager->getAllWithUser();
         foreach($products as $product){
-            $product->rate = $this->rateManager->getCurrentRate($product->id);
-            if($product->rate){
-                $product->rate = $product->rate->rating;
-            }
+            $product->rate = $this->rateManager->getAvgRateProduct($product->id);
         }
         $this->compact(["products" => $products]);
         $this->view("products");
@@ -20,10 +17,7 @@ class ProductController extends BaseController {
     function ShowSearchProducts($search) {
         $products = $this->productManager->getBySearch($search);
         foreach($products as $product){
-            $product->rate = $this->rateManager->getCurrentRate($product->id);
-            if($product->rate){
-                $product->rate = $product->rate->rating;
-            }
+            $product->rate = $this->rateManager->getAvgRateProduct($product->id);
         }
         $this->compact(["products" => $products, "search" => true]);
         $this->view("products");
@@ -62,6 +56,7 @@ class ProductController extends BaseController {
     }
 
     function takeRate($id, $rate){
+        $this->rateManager->getCurrentRate($id, $_SESSION["user"]->id);
         $this->rateManager->takeRateProduct(intval($id), $rate);
         header('Location: /user');
     }
@@ -78,21 +73,6 @@ class ProductController extends BaseController {
                 exit;
             }
         }
-        $rate = new \stdClass();
-        $rate->product_id = $id;
-        $rate->user_id = $_SESSION["user"]->id;
-        $rate->rating = $rating;
-        if ($this->rateManager->create($rate)) {
-            $this->json([
-                "success" => true
-            ]);
-
-            exit;
-        }
-        $this->json([
-            "success" => false
-        ]);
-        exit;
     }
 
 
