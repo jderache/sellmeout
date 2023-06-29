@@ -1,4 +1,6 @@
+<div class="container">
 <div class="Basket-Wrapper">
+    <h1 class="Basket-Title">Panier</h1>
 <?php
     if(isset($products)){
         foreach ($products as $product):?>
@@ -18,7 +20,7 @@
                             <input type="hidden" name="id" value="<?=$product['id']?>">
                             <label for="quantite">Quantité : </label>
                             <div class="set-info">
-                                <input class='IptQte' id='quantite' name="quantite" type="number" min="0" step="1" value="<?= $product['quantite'];?>">
+                                <input class='IptQte' id='quantite' name="quantite" type="number" min="1" step="1" value="<?= $product['quantite'];?>">
                                 <input type="submit" value="Mettre à jour le panier" class="reload-cart">
                             </div>
                         </form>
@@ -41,4 +43,5 @@
             <?php
                 }
             ?>
+</div>
 </div>

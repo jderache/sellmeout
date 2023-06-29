@@ -291,7 +291,6 @@ details summary:after {
 }
 details[open] summary:after {
   transform: rotate(45deg);
-  font-size: 2rem;
 }
 .order .product .desc p {
   margin: 10px 0;

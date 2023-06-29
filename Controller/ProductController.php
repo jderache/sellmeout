@@ -7,7 +7,7 @@ class ProductController extends BaseController {
     function ShowProducts(){
         $products = $this->productManager->getAllWithUser();
         foreach($products as $product){
-            $product->rate = $this->rateManager->getCurrentRate($product->id, $_SESSION['user']->id);
+            $product->rate = $this->rateManager->getCurrentRate($product->id);
             if($product->rate){
                 $product->rate = $product->rate->rating;
             }

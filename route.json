@@ -4,7 +4,7 @@
     "controller": "Product",
     "action": "ShowProducts",
     "method": "GET",
-    "manager": ["Product"]
+    "manager": ["Product", "Rate"]
   },
   {
     "path": "/logout",
@@ -44,10 +44,7 @@
     "controller": "Product",
     "action": "ShowProducts",
     "method": "GET",
-    "manager": [
-      "Product",
-      "Rate"
-    ]
+    "manager": ["Product", "Rate"]
   },
 
   {

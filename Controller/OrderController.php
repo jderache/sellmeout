@@ -7,9 +7,8 @@ class OrderController extends BaseController {
 
     public function addOrder() {
         $this->orderManager->addOrder($_SESSION["panier"], $_SESSION["user"]->id);
-        echo "Commande enregistrée !";
         unset($_SESSION['panier']);
-        
+        $this->view("order");
     }
     
 }

@@ -27,7 +27,7 @@ class OrderManager extends ModelManager {
     public function getByUserId($userId) {
         $query = "SELECT orders.id, orders.created_at
         FROM orders
-        WHERE orders.userId = ?";
+        WHERE orders.userId = ? ORDER BY orders.created_at DESC";
         
         $req = $this->bdd->prepare($query);
         $req->execute([$userId]);

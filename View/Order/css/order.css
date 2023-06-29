@@ -1,0 +1,19 @@
+.confirmCommand .return {
+  display: flex;
+  justify-content: center;
+}
+
+.return i {
+  margin-right: 10px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+}
+.center p {
+  text-align: center;
+  margin: 0;
+}
