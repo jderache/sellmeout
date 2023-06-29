@@ -199,6 +199,14 @@ class UserController extends BaseController
                 $orders = $this->orderManager->getBySellerId($_SESSION['user']->id);
                 foreach($orders as $order) {
                     $order->products = $this->orderItemsManager->getItemsByCommandId($order->id);
+                    $order->pseudo = $this->userManager->getById($order->userId)->pseudo;
+                    
+                    foreach($order->products as $product) {
+                        $product->rate = $this->rateManager->getRateFromUser($product->id, $order->userId);
+                        if ($product->rate) {
+                            $product->rate = $product->rate->rating;
+                        }
+                    }
                 }
                 $this->compact(["orders" => $orders]);
                 break;

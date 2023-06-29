@@ -36,7 +36,7 @@ class OrderManager extends ModelManager {
     }
 
     public function getBySellerId($userId) {
-        $query = "SELECT orders.id, orders.created_at
+        $query = "SELECT orders.id, orders.created_at, orders.userId
         FROM orders
         INNER JOIN order_items ON orders.id = order_items.order_id
         INNER JOIN product ON order_items.product_id = product.id

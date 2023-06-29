@@ -53,4 +53,13 @@ class RateManager extends ModelManager{
         $average_rating = $result['moyenne_note'] !== null ? number_format($result['moyenne_note'], 0, '', '') : null;
         return $average_rating;
     }
+
+    public function getRateFromUser($product_id, $user_id) {
+        $req = $this->bdd->prepare("SELECT * FROM rates WHERE productId = :productId AND userId = :userId");
+        $req->bindParam(":productId", $product_id);
+        $req->bindParam(":userId", $user_id);
+        $req->execute();
+        $req->setFetchMode(\PDO::FETCH_OBJ);
+        return $req->fetch();
+    }
 }

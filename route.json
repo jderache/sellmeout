@@ -98,7 +98,7 @@
     "action": "Profile",
     "method": "GET",
     "auth": ["admin", "seller", "buyer"],
-    "manager": ["Product", "Order", "OrderItems", "Rate"]
+    "manager": ["Product", "Order", "OrderItems", "Rate", "User"]
   },
   {
     "path": "/product/status/([0-9]*)",
@@ -120,7 +120,7 @@
     "controller": "Product",
     "action": "takeRate",
     "method": "POST",
-    "manager": ["product", "rate"]
+    "manager": ["Product", "rate"]
   },
   {
     "path": "/basket/update",
