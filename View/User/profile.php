@@ -1,3 +1,4 @@
+<script src='/View/User/js/profile.js' defer></script>
 <div class="profile">
     <div class="container">
         <!-- <p>Vous êtes connectés en tant que <?= $user->pseudo; ?></p> -->
@@ -24,8 +25,16 @@
                                                 <p>Quantité : <?= $product->quantity; ?></p>
                                                 <p>Prix : <?= $product->price; ?> €</p>
                                                 <form method="POST" action="products/<?= $product->id ?>/rate">
-                                                      Note du produit : <input class="form-input" type="number" id="rate" name="rate" step="1" min="0"  max='5' required>
-
+                                                      Note du produit : 
+                                                      <div class="rating-stars">            
+                                                            <i class="fa-solid fa-star" data-value="1"></i>
+                                                            <i class="fa-solid fa-star" data-value="2"></i>
+                                                            <i class="fa-solid fa-star" data-value="3"></i>
+                                                            <i class="fa-solid fa-star" data-value="4"></i>
+                                                            <i class="fa-solid fa-star" data-value="5"></i>
+                                                      </div>
+                                                      <input type="hidden" id="rating-input" name="rate" value="0">
+                                                      <input type="submit" class="button-rate" value = "Envoyer ma note"method="POST" action="products/<?= $product->id ?>/rate">
                                                 </form>
                                           </div>
                                     </div>

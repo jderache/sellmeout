@@ -408,3 +408,22 @@ details[open] summary:after {
     padding: 0 40px 0;
   }
 }
+
+.rating-stars i.active {
+  color: orange;
+}
+
+.button-rate{
+  background-color: rgb(255, 43, 43);
+  color: white;
+  border: 0px solid black;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+.desc > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
