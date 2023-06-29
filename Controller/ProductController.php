@@ -3,6 +3,7 @@ namespace Controller;
 
 class ProductController extends BaseController {
     protected $productManager;
+    protected $rateManager;
 
     function ShowProducts(){
         $products = $this->productManager->getAllWithUser();
@@ -58,6 +59,40 @@ class ProductController extends BaseController {
     {
         $this->productManager->ToggleStatus($product_id,$_SESSION['user']->id);
         $this->redirect("/my-products");
+    }
+
+    function takeRate($id, $rate){
+        $this->rateManager->takeRateProduct(intval($id), $rate);
+        header('Location: /user');
+    }
+
+    function rateProduct($id, $rating) {
+        $rate = $this->rateManager->getCurrentRate($id, $_SESSION["user"]->id);
+        if ($rate) {
+            $rate->rating = $rating;
+            if ($this->rateManager->update($rate)) {
+                $this->json([
+                    "success" => true
+                ]);
+
+                exit;
+            }
+        }
+        $rate = new \stdClass();
+        $rate->product_id = $id;
+        $rate->user_id = $_SESSION["user"]->id;
+        $rate->rating = $rating;
+        if ($this->rateManager->create($rate)) {
+            $this->json([
+                "success" => true
+            ]);
+
+            exit;
+        }
+        $this->json([
+            "success" => false
+        ]);
+        exit;
     }
 
 

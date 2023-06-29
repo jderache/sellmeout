@@ -23,6 +23,10 @@
                                                 <p>Produit : <?= $product->nom; ?></p>
                                                 <p>Quantité : <?= $product->quantity; ?></p>
                                                 <p>Prix : <?= $product->price; ?> €</p>
+                                                <form method="POST" action="products/<?= $product->id ?>/rate">
+                                                      Note du produit : <input class="form-input" type="number" id="rate" name="rate" step="1" min="0"  max='5' required>
+
+                                                </form>
                                           </div>
                                     </div>
                                     <?php endforeach; ?>
