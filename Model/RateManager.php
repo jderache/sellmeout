@@ -17,4 +17,15 @@ class RateManager extends ModelManager{
         return $req->fetch();
     }
 
+    // permet de noter un produit
+    public function takeRateProduct($product_id, $rate){
+        $req = $this->bdd->prepare("INSERT INTO rates (id, productId, rating, userId) VALUES (NULL, :productId, :rating, :userId)");;
+        $req->bindParam(":productId", $product_id);
+        $req->bindParam(":rating", $rate);
+        $req->bindParam(":userId", $_SESSION["user"]->id);
+        $req->execute();
+        $req->setFetchMode(\PDO::FETCH_OBJ);
+        return $req->fetch();
+    }
+
 }

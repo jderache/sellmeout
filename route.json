@@ -109,6 +109,16 @@
     "manager": ["Product", "Rate"]
   },
   {
+    "path":"/products/([0-9]*)/rate",
+    "controller":"Product",
+    "action": "takeRate",
+    "method": "POST",
+    "manager": [
+      "product",
+      "rate"
+    ]
+  },
+  {
     "path": "/basket/update",
     "controller": "Basket",
     "action": "UpdateQuantity",
