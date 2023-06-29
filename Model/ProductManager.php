@@ -51,7 +51,7 @@ class ProductManager extends ModelManager{
 
     public function getBySearch($search)
     {
-        $req = $this->bdd->prepare("SELECT * FROM product
+        $req = $this->bdd->prepare("SELECT product.*,user.pseudo FROM product INNER JOIN user ON product.userId = user.id
         WHERE product.nom LIKE :search AND product.statut = 1");
         $req->bindValue(":search", "%" . $search . "%");
         $req->execute();

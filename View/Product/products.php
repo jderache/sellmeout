@@ -20,12 +20,8 @@
                     <h3><?= $product->nom ?></h3>
                     <p><?= $product->description ?></p>
                     <p><?= $product->price ?> €</p>
-                    <?php if($product->rate): ?>
-                        <p>Notes : <?= $product->rate ?></p>
-                    <?php endif; ?>
-                    <?php if(isset($product->pseudo)): ?>
-                        <p><?= $product->pseudo ?></p>
-                    <?php endif; ?>
+                    <p>Notes : <?= $product->rate ?></p>
+                    <p><?= $product->pseudo ?></p>
 
                     <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"): ?>
                     <?php else: ?>

@@ -17,7 +17,13 @@ class ProductController extends BaseController {
     }
 
     function ShowSearchProducts($search) {
-        $products = $this->productManager->getBySearch($search); 
+        $products = $this->productManager->getBySearch($search);
+        foreach($products as $product){
+            $product->rate = $this->rateManager->getCurrentRate($product->id);
+            if($product->rate){
+                $product->rate = $product->rate->rating;
+            }
+        }
         $this->compact(["products" => $products, "search" => true]);
         $this->view("products");
     }

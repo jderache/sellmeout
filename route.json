@@ -106,7 +106,7 @@
     "controller": "Product",
     "action": "ShowSearchProducts",
     "method": "GET",
-    "manager": ["product"]
+    "manager": ["Product", "Rate"]
   },
   {
     "path": "/basket/update",
