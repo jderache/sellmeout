@@ -303,7 +303,7 @@ details[open] summary:after {
 /* Menu Burger */
 
 #nav-icon1 {
-  width: 50px;
+  width: 35px;
   height: 40px;
   position: relative;
   margin: 0;
@@ -338,7 +338,7 @@ details[open] summary:after {
 }
 
 #nav-icon1 span:nth-child(1) {
-  top: 0px;
+  top: 7px;
 }
 
 #nav-icon1 span:nth-child(2) {
@@ -346,7 +346,7 @@ details[open] summary:after {
 }
 
 #nav-icon1 span:nth-child(3) {
-  top: 36px;
+  top: 29px;
 }
 
 #nav-icon1.open span:nth-child(1) {
