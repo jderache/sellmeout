@@ -6,16 +6,22 @@ class ProductController extends BaseController {
 
     function ShowProducts(){
         $products = $this->productManager->getAllWithUser();
+        foreach($products as $product){
+            $product->rate = $this->rateManager->getCurrentRate($product->id, $_SESSION['user']->id);
+            if($product->rate){
+                $product->rate = $product->rate->rating;
+            }
+        }
         $this->compact(["products" => $products]);
         $this->view("products");
     }
 
     function ShowSearchProducts($search) {
-        $products = $this->productManager->getBySearch($search);
+        $products = $this->productManager->getBySearch($search); 
         $this->compact(["products" => $products, "search" => true]);
         $this->view("products");
     }
-    
+
     function showProduct($id) {
         $product = $this->productManager->getById($id);
         $this->compact(["product" => $product]);
