@@ -68,7 +68,7 @@
     "controller": "Product",
     "action": "ShowProduct",
     "method": "GET",
-    "manager": ["product"]
+    "manager": ["Product", "Rate"]
   },
   {
     "path": "/basket",

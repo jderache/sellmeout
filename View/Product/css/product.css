@@ -1,0 +1,6 @@
+.product-card {
+  background: white;
+  padding: 20px;
+  display: flex;
+  border-radius: 30px;
+}
