@@ -18,14 +18,16 @@
                     <div>
                         <form method="post" action="/basket/update">
                             <input type="hidden" name="id" value="<?=$product['id']?>">
-                            <label for="quantite">Quantité : </label>
+                            <p class='description'>Description : <?=$product['description']?></p>
                             <div class="set-info">
+                                <div>
+                                <label for="quantite">Quantité : </label>
                                 <input class='IptQte' id='quantite' name="quantite" type="number" min="1" step="1" value="<?= $product['quantite'];?>">
-                                <input type="submit" value="Mettre à jour le panier" class="reload-cart">
+                                </div>
                             </div>
+                            <input type="submit" value="Mettre à jour le panier" class="reload-cart">
                         </form>
                     </div>
-                    <p class='description'>Description : <?=$product['description']?></p>
                 </div>
             </div>     
         <?php  endforeach;?>

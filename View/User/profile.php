@@ -40,11 +40,20 @@
       <?php } ?>
       <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
             <h1>Mes ventes</h1>
-            <?php if(empty($products)): ?>
-                  <p>Vous n'avez aucun produit en vente</p>
-            <?php else: ?>
-                  
-            <?php endif; ?>
+            <?php foreach($orders as $order): ?>
+                  <?php foreach($products as $product): ?>
+                        <div class="product">
+                              <img src="<?= $product->image; ?>" alt="" srcset="">
+                              <div class="desc">
+                                    <p>Produit : <?= $product->nom; ?></p>
+                                    <p>Quantité : <?= $product->quantity; ?></p>
+                                    <p>Prix : <?= $product->price; ?> €</p>
+                                    <p>Commandes : <?= $product->nb_orders; ?></p>
+                                    <p>Note : <?= $product->rate; ?></p>
+                              </div>
+                        </div>
+                  <?php endforeach; ?>
+            <?php endforeach; ?>
       <?php } ?>
     </div>
 </div>

@@ -197,7 +197,7 @@ class UserController extends BaseController
                 break;
             case "seller":
                 $orders = $this->orderManager->getBySellerId($_SESSION['user']->id);
-                    foreach($orders as $order) {
+                foreach($orders as $order) {
                     $order->products = $this->orderItemsManager->getItemsByCommandId($order->id);
                 }
                 $this->compact(["orders" => $orders]);

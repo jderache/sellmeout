@@ -40,12 +40,11 @@ class OrderManager extends ModelManager {
         FROM orders
         INNER JOIN order_items ON orders.id = order_items.order_id
         INNER JOIN product ON order_items.product_id = product.id
-        WHERE product.userId = ?
-        GROUP BY orders.id";
-        
+        WHERE product.userId = ? ORDER BY orders.created_at DESC";
+
         $req = $this->bdd->prepare($query);
         $req->execute([$userId]);
-    
+        
         return $req->fetchAll(\PDO::FETCH_OBJ);
     }
     

@@ -26,6 +26,7 @@
   justify-content: center;
   background: white;
   border-radius: 20px;
+  margin: 20px 0;
 }
 
 .ProduitInfo {
@@ -38,12 +39,6 @@
   width: 250px;
 }
 
-.IptQte {
-  width: 40px;
-  margin-top: -22px;
-  margin-left: 73px;
-}
-
 .OrderButton {
   height: 100px;
   width: 250px;
@@ -54,6 +49,7 @@
   align-items: center;
   background-color: #f81649;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .OrderButton:hover {
@@ -82,6 +78,7 @@
   color: white;
   gap: 10px;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .deleteBasket {
@@ -92,6 +89,7 @@
   background-color: #f81649;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .reload-cart {
@@ -105,9 +103,25 @@
   color: white;
   border-radius: 10px;
   margin-left: 0px;
+  cursor: pointer;
 }
 
+.IptQte {
+  outline: none;
+  background: white;
+  border: 2px solid lightgrey;
+  border-radius: 100px;
+  width: 35px;
+  padding-left: 15px;
+  margin-left: 5px;
+}
 .set-info {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+  .ProduitElement {
+    flex-direction: column;
+  }
 }
