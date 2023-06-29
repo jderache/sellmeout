@@ -20,6 +20,9 @@
                     <h3><?= $product->nom ?></h3>
                     <p><?= $product->description ?></p>
                     <p><?= $product->price ?> €</p>
+                    <?php if($product->rate): ?>
+                        <p>Notes : <?= $product->rate ?></p>
+                    <?php endif; ?>
                     <?php if(isset($product->pseudo)): ?>
                         <p><?= $product->pseudo ?></p>
                     <?php endif; ?>
