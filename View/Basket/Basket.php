@@ -8,7 +8,7 @@
                 <img class="basketImage" src="<?= $product['image']?>" alt="Image">
                 <div class="ProduitInfo"> 
                     <h3><?= $product['name'] ?></h3>
-                    <form action="/basket/delete" method="post">
+                    <form action="/basket/delete" method="post" class="form-delete">
                         <input type="hidden" name='id' value="<?=$product['id']?>">
                         <button  class="deleteBasket" type="submit">
                             <i class="fa-solid fa-trash"></i>

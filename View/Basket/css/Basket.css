@@ -64,11 +64,6 @@
   color: white;
 }
 
-.deleteBasket {
-  float: right;
-  outline: none;
-}
-
 .Commander {
   display: flex;
   padding: 10px;
@@ -84,7 +79,9 @@
 .deleteBasket {
   text-decoration: none;
   padding: 8px;
-  margin-top: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   border: none;
   background-color: #f81649;
   color: white;
@@ -118,6 +115,10 @@
 .set-info {
   display: flex;
   flex-direction: column;
+}
+
+.form-delete {
+  position: relative;
 }
 
 @media screen and (max-width: 800px) {
