@@ -23,14 +23,18 @@
               </div>
             </form>
             <?php endif; ?>
-            <div class="stars">
-              <?php 
-          for ($i = 0; $i < $product->rate; $i++) {
-            echo '<i class="fa-solid fa-star" id="stars"></i>';
-          }
-          ?>
+            <?php if(!empty($product->rate)) { ?>
+              <div class="stars">
+                  <span><?= $product->rate ?>&nbsp;/ 5</span>
+                  <?php
+                  for ($i = 0; $i < $product->rate; $i++) {
+                      echo '<i class="fa-solid fa-star" id="stars"></i>';
+                  }
+                  ?>
+              </div>
+            <?php } ?>
+            <p>Seller&nbsp;: <?= $product->pseudo ?></p>
         </div>
-        <p>Seller&nbsp;: <?= $product->pseudo ?></p>
       </div>
     </div>
 </div>

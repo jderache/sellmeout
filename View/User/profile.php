@@ -80,6 +80,7 @@
                         </details>
                         </div>
                   <?php endforeach; ?>
+                  
             <?php endif; ?>
       <?php } ?>
     </div>
