@@ -190,7 +190,7 @@ class UserController extends BaseController
         switch ($_SESSION['user']->role) {
             case "buyer":
                 $orders = $this->orderManager->getByUserId($_SESSION['user']->id);
-                    foreach($orders as $order) {
+                foreach($orders as $order) {
                     $order->products = $this->orderItemsManager->getItemsByCommandId($order->id);
                 }
                 $this->compact(["orders" => $orders]);

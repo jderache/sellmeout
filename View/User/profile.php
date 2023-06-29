@@ -71,6 +71,15 @@
                                                       <p>Quantité : <?= $product->quantity; ?></p>
                                                       <p>Prix : <?= $product->price; ?> €</p>
                                                 </div>
+                                               
+                                                <div class="stars">
+                                                      <span><?= $product->rate ?>&nbsp;/ 5</span>
+                                                      <?php
+                                                      for ($i = 0; $i < $product->rate; $i++) {
+                                                            echo '<i class="fa-solid fa-star" id="stars"></i>';
+                                                      }
+                                                      ?>
+                                                </div>
                                           </div>
                                     <?php endif; ?>
                               <?php endforeach; ?>
