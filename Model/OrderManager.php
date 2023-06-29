@@ -35,13 +35,16 @@ class OrderManager extends ModelManager {
         return $req->fetchAll(\PDO::FETCH_OBJ);
     }
 
-    public function getBySellerId($sellerId) {
+    public function getBySellerId($userId) {
         $query = "SELECT orders.id, orders.created_at
-                  FROM orders
-                  WHERE orders.userId = ?";
+        FROM orders
+        INNER JOIN order_items ON orders.id = order_items.order_id
+        INNER JOIN product ON order_items.product_id = product.id
+        WHERE product.userId = ?
+        GROUP BY orders.id";
         
         $req = $this->bdd->prepare($query);
-        $req->execute([$sellerId]);
+        $req->execute([$userId]);
     
         return $req->fetchAll(\PDO::FETCH_OBJ);
     }

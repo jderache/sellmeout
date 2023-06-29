@@ -37,9 +37,9 @@
       <?php if(isset($_SESSION['user']) && $_SESSION['user']->role == "seller"){ ?>
             <h1>Mes ventes</h1>
             <?php if(empty($products)): ?>
-                  <p>Vous n'avez pas encore de produits vendus</p>
+                  <p>Vous n'avez aucun produit en vente</p>
             <?php else: ?>
-            
+                  
             <?php endif; ?>
       <?php } ?>
     </div>
