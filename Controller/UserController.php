@@ -200,7 +200,6 @@ class UserController extends BaseController
                 foreach($orders as $order) {
                     $order->products = $this->orderItemsManager->getItemsByCommandId($order->id);
                     $order->pseudo = $this->userManager->getById($order->userId)->pseudo;
-                    
                     foreach($order->products as $product) {
                         $product->rate = $this->rateManager->getRateFromUser($product->id, $order->userId);
                         if ($product->rate) {

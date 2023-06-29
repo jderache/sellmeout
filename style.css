@@ -413,7 +413,7 @@ details[open] summary:after {
   color: orange;
 }
 
-.button-rate{
+.button-rate {
   background-color: rgb(255, 43, 43);
   color: white;
   border: 0px solid black;
@@ -426,4 +426,14 @@ details[open] summary:after {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .order .product {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .order .product .desc {
+    padding-left: 0;
+  }
 }
