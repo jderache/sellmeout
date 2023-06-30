@@ -70,6 +70,7 @@
                                                       <p>Produit : <?= $product->nom; ?></p>
                                                       <p>Quantité : <?= $product->quantity; ?></p>
                                                       <p>Prix : <?= $product->price; ?> €</p>
+                                                      <?php if(!empty($product->rate)) { ?>
                                                       <div class="stars" style="color: orange;">
                                                             <span><?= $product->rate ?>&nbsp;/ 5</span>
                                                             <?php
@@ -78,6 +79,7 @@
                                                             }
                                                             ?>
                                                       </div>
+                                                      <?php } ?>
                                                       <p>Commande passée par : <?= $order->pseudo; ?></p>
                                                 </div>
                                           </div>

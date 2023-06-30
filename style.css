@@ -227,6 +227,7 @@ summary.order {
 }
 .order .product img {
   max-width: 150px;
+  height: max-content;
 }
 .order .product {
   display: flex;
