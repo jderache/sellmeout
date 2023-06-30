@@ -36,18 +36,16 @@ class OrderManager extends ModelManager {
     }
 
     public function getBySellerId($userId) {
-        $query = "SELECT orders.id, orders.created_at, orders.userId
+        $query = "SELECT DISTINCT orders.id, orders.created_at, orders.userId
         FROM orders
         INNER JOIN order_items ON orders.id = order_items.order_id
         INNER JOIN product ON order_items.product_id = product.id
-        WHERE product.userId = ? ORDER BY orders.created_at DESC";
-
+        WHERE product.userId = ?
+        ORDER BY orders.created_at DESC";
+    
         $req = $this->bdd->prepare($query);
         $req->execute([$userId]);
-        
+    
         return $req->fetchAll(\PDO::FETCH_OBJ);
     }
-    
-    
-    
 }

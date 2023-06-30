@@ -52,7 +52,7 @@
     "controller": "Product",
     "action": "addProduct",
     "method": "POST",
-    "manager": ["product"],
+    "manager": ["Product"],
     "auth": ["admin", "seller"]
   },
   {
@@ -60,7 +60,7 @@
     "controller": "Product",
     "action": "addProductView",
     "method": "GET",
-    "manager": ["product"],
+    "manager": ["Product"],
     "auth": ["admin", "seller"]
   },
   {
@@ -120,7 +120,7 @@
     "controller": "Product",
     "action": "takeRate",
     "method": "POST",
-    "manager": ["Product", "rate"]
+    "manager": ["Product", "Rate"]
   },
   {
     "path": "/basket/update",
