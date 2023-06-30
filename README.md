@@ -1,7 +1,7 @@
 # sellmeout
 
 ## Introduction
-La société SellMeOut, leader du destockage de matériel informatique dans plus de 120 magasins en
+La société __SellMeOut__, leader du destockage de matériel informatique dans plus de 120 magasins en
 France souhaite lancer un nouveau canal de vente afin de conquérir un nouveau marché.
 
 ## Besoin
@@ -32,5 +32,30 @@ vendeur)
 - Accéder aux commandes qui lui sont passés
 
 ## Réutilisation du projet
-Le code est librement modifiable sans restriction ni contrainte technique particulière.
+Le code est librement __modifiable__ sans restriction ni contrainte technique particulière.
 
+## Installation & Lancement
+Pour permettre de démarrer le projet en local, vous devez tout d'abord : 
+- Installer MAMP [https://www.mamp.info/en/mac/] sur MAC
+- Installer WAMP [https://www.wampserver.com/en/] sur Windows
+
+Après l'installation, il vous suffit de lancer MAMP ou WAMP et de taper dans un navigateur __https://localhost:8888/__ (il faut savoir que le port peut changer __sur certaines machines__, veuillez vérifier vos paramètres).
+
+## Configuration de la BDD
+Concernant la base de donnée, il faudra bien sur utilisé la base de donnée initialiser pendant le développement de l'application.
+
+Une base de données MySQL avec PHPMYADMIN est nécessaire pour pouvoir utiliser cette application.
+
+Il va falloir aller à l'adresse suivante : __http://localhost:8888/phpMyAdmin5/__.
+Après cela, vous devrez vous authentifier (les comptes utilisateurs vous seront communiqués au moment venu).
+
+Pour intégrer la base de données, vous devez initialiser une nouvelle base de données en utilisant l'encodage __utf8_general_ci__. Ensuite, allez dans l'onglet __"Importer"__ et sélectionnez __le fichier SQL__ associé.
+
+Il faut maintenant configurer un fichier config.json à la racine du projet avec les champs suivants :
+
+- __"database"__: le nom de la base de données (nom donné sur phpMyAdmin)
+- __"host"__: le nom de l'hôte (souvent __"localhost"__)
+- __"user"__: l'utilisateur de la base de données
+- __"password"__: le mot de passe de l'utilisateur de la base de données
+
+Une fois cela fait, vous pouvez maintenant utiliser le projet avec tous les prérequis nécessaires pour le faire fonctionner en local.
